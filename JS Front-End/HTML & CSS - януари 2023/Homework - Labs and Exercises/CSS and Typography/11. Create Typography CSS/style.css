@@ -1,0 +1,55 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, serif;
+}
+
+blockquote {
+    border-left: 4px solid rgb(221,221,221);
+    font-style: italic;
+    font-size: 15px;
+    padding: 10px 30px;
+}
+
+p.author {
+    text-align: right;
+}
+
+ul {
+    list-style-type: square;
+}
+
+ul ul {
+    list-style-type: disc;
+}
+
+ul ul ul {
+    list-style-type: circle;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: darkgray;
+    text-align: left;
+    padding: 6px;
+}
+
+td {
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 6px;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(221,221,221);
+}
+
