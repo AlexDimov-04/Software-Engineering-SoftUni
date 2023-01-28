@@ -1,0 +1,19 @@
+html {
+    font-family: Helvetica, sans-serif;
+}
+
+div, ul, li, nav{
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    color: green;
+    padding: 30px;
+}
+
+div {
+    font-size: 40px;
+    font-weight: bold;
+    margin-right: 80px;
+}
