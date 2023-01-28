@@ -1,0 +1,92 @@
+@import url(https://use.fontawesome.com/releases/v5.6.3/css/all.css);
+
+body {
+    background-color: #BEFBFF;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.card img{
+    width: 20rem;
+}
+
+.card {
+    margin: auto;
+    max-width: 320px;
+    border: 2px solid black;
+    border-radius: 9px;
+    overflow: hidden;
+    background-color: #fff;
+    height: 52em;
+}
+
+.content {
+    padding: 12px 22px;  
+    text-align: center;
+}
+
+.content__title {
+    font-size: 21px;
+    margin-bottom: 6px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.content__badge {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 16px;
+    margin-top: 10px;
+    margin-bottom: 32px;
+    color: #00ACD6;
+}
+
+.content__section-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: gray;
+}
+
+ul.content__projects {
+    border-radius: 6px;
+    padding: 6px;
+    text-align: left;
+    font-size: 0px;
+}
+
+.project {
+   background-color: #E6F4F1; 
+   border-radius: 4px;
+   display: inline-block;
+   font-size: 16px;
+}
+
+.project:not(:last-child) {
+    margin-right: 4px;
+}
+
+.project:first-child {
+    margin-bottom: 4px;
+}
+
+.content__job-experience {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 6px;
+    font-size: 16px;
+    color: gray;
+}
+
+.job {
+    background-color: #E6F4F1;
+    border-radius: 2px;
+    font-size: 20px;
+    margin: 15px;
+    padding: 5px;
+    width: 270px;
+    margin-left: 1px;
+}

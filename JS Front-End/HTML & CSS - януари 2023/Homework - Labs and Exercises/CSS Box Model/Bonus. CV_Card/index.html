@@ -1,10 +1,59 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>CV Card</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Curriculum vitae</h1>
+    <main>
+        <h1>Curriculum vitae</h1>
+        <article class="card">
+            <img src="https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=766&q=80"
+                alt="Unsplash image">
+
+            <div class="content">
+                <h2 class="content__title">Erik Lucatero</h2>
+
+                <p class="content__badge">Department Marketing</p>
+
+                <h3 class="content__section-title">Projects</h3>
+
+                <ul class="content__projects" role="list">
+                    <li class="project"><i class="far fa-file-code"></i>
+                        <span class="project__name">Flagship design course</span>
+                    </li>
+
+                    <li class="project"><i class="far fa-file-code"></i>
+                        <span class="project__name">Social media app</span>
+                    </li>
+
+                    <li class="project"><i class="far fa-file-code"></i>
+                        <span class="project__name">Marketing app</span>
+                    </li>
+                </ul>
+
+                <h3 class="content__job-experience">Experience</h3>
+
+                <ul class="content__jobs" role="list">
+                    <li class="job">
+                        <span class="job__name"><i class="far fa-folder"></i> Software Engineer</span>
+                    </li>
+
+                    <li class="job">
+                        <span class="job__name"><i class="far fa-folder"></i> Marketing Manager</span>
+                    </li>
+
+                    <li class="job">
+                        <span class="job__name"><i class="far fa-folder"></i> UX Designer</span>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </main>
+
 </body>
+
 </html>
