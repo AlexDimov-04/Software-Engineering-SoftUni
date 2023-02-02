@@ -1,0 +1,108 @@
+a {
+    color: rgb(0, 102, 0);
+    font-size: 22px;
+}
+
+header {
+    display:block;
+    position: relative;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+    padding: 32px;
+}
+
+img {
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.25);
+    padding: 12px;
+    border: 5px solid black;
+    margin-left: 10px;
+}
+
+blockquote{
+    display: inline-block;
+    width: 40%;
+    font-family: Georgia, serif;
+    color: gray;
+    font-style: italic;
+    border-left: 3px solid lightgray;
+    font-size: 14px;
+    padding-left: 50px;
+    margin-bottom: 0px;
+    position: relative;
+    left: 10px;
+    bottom: 100px;
+}
+
+blockquote > p:nth-child(2) {
+    text-align: right;
+}
+
+.block {
+    display: inline-block;
+    width: 35%;
+}
+
+h1, h2, h3{
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+p {
+    font-family: Georgia, serif;
+    font-size: 25px;
+}
+
+ul li a{
+    text-decoration: none;
+}
+
+hr {
+    border-top: 3px solid black;
+}
+
+header > p {
+    display: inline-block;
+    font-size: 50px;
+    font-weight: bold;
+    position: relative;
+    top: 90px;
+}
+
+.navigation-1 li {
+    display: inline-block;
+    position: relative;
+    left: 70%;
+    bottom: 20px;
+}
+
+.navigation-1 li:not(:last-child) {
+    padding-right: 10px;
+}
+
+.escalator {
+    float: right;
+}
+
+.road {
+    float: left;
+    margin-right: 26px;
+    margin-bottom: 26px;
+}
+
+aside {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 300px;
+    margin-right: 50px;
+}
+
+main {
+    width: 70%;
+}
