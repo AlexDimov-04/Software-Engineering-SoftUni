@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 1px 1px 100px 1px #888888;
+    padding: 20px;
+    height: 8rem;
+    width: 35%;
+    height: 10%;
+    overflow: hidden;
+}
+
+h2, p {
+    line-height: 20px;
+    position: relative;
+    bottom: 20px;
+}
+

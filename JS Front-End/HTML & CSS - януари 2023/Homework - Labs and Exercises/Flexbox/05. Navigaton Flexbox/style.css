@@ -1,0 +1,49 @@
+body {
+    margin: 64px 45px;
+    font-family: Helvetica, sans-serif;
+
+}
+
+ul li a{
+    text-decoration: none;
+    color: rgb(73, 161, 73);
+    font-size: 20px;
+}
+
+p {
+    line-height: 24px;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+ul {
+    list-style-type: none;
+}
+
+hr {
+    border: 2px solid black;
+}
+
+span {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-right: auto;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    flex: 5 1 100%;
+}
+
+

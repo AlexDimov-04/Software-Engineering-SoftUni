@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(238, 238, 238);
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    margin-left: 20px;
+}
+
+header h1 {
+    margin-left: 25px;
+}
+
+hr {
+    border: 2px solid black;
+}
+
+footer {
+    color: rgb(255, 255, 255);
+    background-color: rgb(102, 102, 102);
+    margin-left: 0px;
+}
+
