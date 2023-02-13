@@ -1,39 +1,48 @@
-html{
+* {
     box-sizing: border-box;
 }
-span{
-    border: 1px solid black;
-}
-.container{
-    max-width: 65vw;
+
+.container {
+    max-width: 85vw;
     display: flex;
 }
-.container .week{
+
+.container section {
     display: flex;
-    flex-wrap: wrap;
     text-align: center;
 }
-.container .week span{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    height: 100px;
-    width: 20%;
-    padding-top: 20px;
+
+.container .item {
+    border: 1px solid black;
+    padding: 12px;
+    display: block;
+    height: 16vh;
 }
-.container .week span:nth-child(1),
-.container .week span:nth-child(7){
+
+.container .notes {
+    width: 25%;
+    flex-direction: column;
+}
+
+.container .week {
+    width: 75%;
+    flex-wrap: wrap;    
+}
+
+.container .week .item {
+    width: 20%;
+}
+
+.container .notes .item {
+    height: 100%;
+}
+
+.container .week .item:nth-child(1),
+.container .week .item:nth-child(7) {
     width: 100%;
 }
-.container .week span:nth-child(8),
-.container .week span:nth-child(9){
+
+.container .week .item:nth-child(8),
+.container .week .item:nth-child(9) {
     width: 50%;
-}
-.container .notes{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-.container .notes span{
-    height: 50%;
 }

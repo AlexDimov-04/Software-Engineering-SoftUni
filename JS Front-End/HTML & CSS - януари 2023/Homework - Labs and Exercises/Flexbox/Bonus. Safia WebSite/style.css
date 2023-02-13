@@ -1,0 +1,13 @@
+.columns {
+    display: flex;
+    gap: 30px;
+    border: 4px solid black;
+}
+
+.card {
+    background-color: green;
+}
+
+.columns > * {
+    flex: 1 1 0;
+}
