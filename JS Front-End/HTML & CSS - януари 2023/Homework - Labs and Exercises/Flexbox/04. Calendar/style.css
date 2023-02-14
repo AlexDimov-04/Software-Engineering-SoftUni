@@ -15,7 +15,9 @@
 .container .item {
     border: 1px solid black;
     padding: 12px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 16vh;
 }
 
@@ -46,3 +48,39 @@
 .container .week .item:nth-child(9) {
     width: 50%;
 }
+
+/* Grid Example */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr) 25%;
+    grid-template-rows: repeat(4, 50px);
+}
+
+.grid-container .item {
+    border: 1px solid black;
+    padding: 12px;
+    display: block;
+    grid-column: span 2; 
+}
+
+.grid-container .item:first-child,
+.grid-container .item:nth-child(8) {
+    grid-column: 1 / span 10;
+}
+
+.grid-container .item:nth-child(2) {
+    grid-column: 11;
+    grid-row: 1 / span 2;
+}
+
+.grid-container .item:nth-child(9) {
+    grid-column: 11;
+    grid-row: 3 / span 4;
+}
+
+.grid-container .item:nth-child(10),
+.grid-container .item:nth-child(11) {
+    grid-column: span 5;
+}
+
