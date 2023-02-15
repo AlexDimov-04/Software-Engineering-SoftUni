@@ -1,13 +1,502 @@
-.columns {
+@import url(https://use.fontawesome.com/releases/v5.6.3/css/all.css);
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #070e27;
+    color: #fff;
+}
+
+.header {
+    padding: 16px 64px;
     display: flex;
-    gap: 30px;
-    border: 4px solid black;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #7e8bb6;
+    position: sticky;
+    top: 0px;
+    background-color: #070e27;
 }
 
-.card {
-    background-color: green;
+p {
+    color: #7e8bb6;
 }
 
-.columns > * {
-    flex: 1 1 0;
+.header .navigation {
+    margin-left: auto;
+    margin-right: 24px;
 }
+
+.header .nav-list {
+    display: flex;
+    gap: 24px;
+}
+
+.header .nav-list a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.header .nav-list a:hover {
+    color: #c5c5c5;
+}
+
+/* Buttons */
+
+.btn {
+    border: none;
+    border-radius: 4px;
+    background-color: #162044;
+    color: #fff;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+.section-subtitle{
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.section-title{
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 48px;
+}
+
+.btn:hover {
+    background-color: #11162a;
+}
+
+.btn.btn-primary {
+    background-color: #0059f7;
+}
+
+.btn.btn-primary:hover {
+    background-color: #1d6df7;
+}
+
+/* Hero section */
+
+#hero {
+    padding: 70px 64px;
+}
+
+#hero .welcome {
+    max-width: 900px;
+    margin: 0 auto 48px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+#hero .welcome > * {
+    width: 45%;
+
+}
+
+#hero .welcome .title {
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+#hero .welcome .info {
+    margin-bottom: 12px;
+}
+
+#hero .hero-img {
+    margin: 0 auto 48px auto;
+}
+
+
+#hero .partners {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+#features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 64px;
+    border-top: 1px solid #7e8bb6;
+}
+
+#features .head-intro {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    margin-right: 82px;
+}
+
+#features .features-title {
+    margin-bottom: 18px;
+    font-size: 3rem;
+}
+
+#features .intro-p {
+    font-size: 20px;
+}
+
+#features .cards{
+    display: grid;
+    grid-template-columns: repeat(2, 30vh);
+    gap: 32px;
+}
+
+#features .cards .card {
+    border: 1px solid #7e8bb6;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+#features .cards .card:hover {
+    background-color: #162044;
+    cursor: pointer;
+}
+
+#features .cards .card i {
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+#features .cards .card h3 {
+    margin-bottom: 16px;
+}
+
+#features .start-menu {
+    margin-top: 72px;
+    background-color: #0059f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+    width: 636px;
+    padding: 54px;
+    border-radius: 14px;
+    line-height: 1.9;
+}
+
+#features .start-menu span {
+    text-transform: uppercase;
+}
+
+#features .start-menu  h2 {
+    margin-bottom: 18px;
+}
+
+#features .start-menu button {
+    background-color: #9eb4fd;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#features .start-menu button:hover {
+    background-color: #6788f5;
+}
+
+/* HOW section */
+
+#how {
+    padding: 70px 64px;
+}
+
+#how .row {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto 48px auto;
+}
+
+#how .row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+#how .row:last-child{
+    margin-bottom: 0;
+}
+
+#how .row .row-img{
+    width: 60%;
+}
+
+#how .row .title {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+#how .row .row-text .desc {
+    font-size: 14px;
+}
+
+
+@media screen and (max-width: 767px) {
+    #hero .welcome {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+
+    #hero .partners {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+    
+    #hero .welcome .title {
+        width: 100%;
+    }
+
+    #hero .welcome > div {
+        width: 60%;
+    }
+
+    #how .row {
+        gap: 18px;
+    }
+    
+    #how .row:nth-child(even) {
+        margin-bottom: 36px;
+    }
+
+    #how .row .row-img {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #features .head-intro {
+        align-items: center;
+        margin-bottom: 5%;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    #features .head-intro .intro-p {
+        text-align: center;
+        width: 50%;
+    }
+
+    #features .cards{
+        grid-template-columns: repeat(1, 40vh);
+    }
+
+    #features .cards .card {
+        padding: 20px;
+    }
+
+    #features .start-menu {
+        gap: 12px;
+        width: 90%;
+        padding: 20px;
+        line-height: 1.3;
+    }
+    
+    #features .start-menu button {
+        padding: 8px;
+    }
+
+    #features .start-menu h2,
+    #features .start-menu span{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:540px) {
+
+    .header .navigation {
+        display: none;
+    }
+
+    .header .logo-Text {
+        margin-right: auto;
+    }
+
+    #how .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #how .row:nth-child(even) {
+        flex-direction: column;
+    }
+
+    #how .row .row-img {
+        width: 80%;
+    }
+}
+
+/* Pricing */
+
+#pricing {
+    padding: 70px 64px;
+}
+
+#pricing .plans {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    align-items: end;
+}
+
+#pricing .plans .plan {
+    width: 50%;
+    padding: 32px 32px;
+    border-radius: 12px;
+    background-color: #162044;
+}
+
+#pricing .plans .plan .title {
+    font-size: 18px;
+    font-weight: normal;
+    color: #7e8bb6;
+    padding-bottom: 36px;
+    margin-bottom: 36px;
+    border-bottom: 1px solid #7e8bb6;
+}
+
+#pricing .plans .plan .title .price {
+    display: block;
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#pricing .plans .plan .title .price .dollar-sign {
+    color: #7e8bb6;
+}
+
+#pricing .plans .plan .features {
+    color: #7e8bb6;
+    margin: 0 12px 36px 12px;
+}
+
+#pricing .plans .plan .features .feat:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+#pricing .plans .plan:hover {
+    margin-bottom: 36px;
+    background-color: #232c4b;
+    cursor: pointer;
+}
+
+#pricing .start-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 164px;
+    background-color: #0059f7;
+    padding: 24px;
+    border-radius: 18px;
+}
+
+#pricing .start-menu span {
+    color: #9cb3ff;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+#pricing .start-menu h2 {
+    font-size: 38px;
+}
+
+
+#pricing .start-menu button {
+    position: relative;
+    bottom: 42px;
+    right: 12px;
+    background-color: #9eb4fd;
+    padding: 18px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    align-self: flex-end;
+    
+}
+
+#pricing .start-menu button:hover {
+    background-color: #4f72e3;
+}
+
+#pricing .start-menu .container-question {
+    position: relative;
+    top: 24px;
+}
+
+@media screen and (max-width:1000px) {
+    #pricing .plans {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    #pricing .start-menu {
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #pricing .start-menu .container-question {
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    #pricing .start-menu button {
+        position: unset;
+        padding: 12px;
+        margin-top: 16px;
+        align-self: center;
+    }
+}
+
+#footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 24px;
+    background-color: #232c4b;
+    color: #7e8bb6;
+}
+
+#footer .icons {
+    display: flex;
+    gap: 32px;
+}
+
+#footer .policy {
+    list-style-type: none;
+    display: flex;
+    gap: 18px;
+}
+
+@media screen and (max-width:790px) {
+    #footer .policy {
+        display: none;
+    }
+    
+    #footer .rights {
+        margin-left: auto;
+    }
+}
+
