@@ -1,0 +1,201 @@
+@import url(https://use.fontawesome.com/releases/v5.6.3/css/all.css);
+
+:root {
+  --gray-light: #efefef;
+  --gray-dark: #909090;
+  --gray-black: #222222;
+}
+
+body {
+  font-family: Raleway, sans-serif;
+  color: var(--gray-black);
+}
+
+.page-section {
+  max-width: 1880px;
+  margin: 1.5rem auto;
+  background-color: var(--gray-light);
+  height: calc(100vh - 1.5rem);
+  padding: 3rem 5rem;
+}
+
+.section-flexed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.page-section .title {
+  font-weight: normal;
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.page-section .desc {
+  font-style: italic;
+  margin-bottom: 2rem;
+  width: 60%;
+}
+
+.section-flexed .divider.vertical {
+  height: 6rem;
+  width: 1px;
+  background-color: var(--gray-black);
+}
+
+.section-flexed .section-info {
+  flex: 0 0 50%;
+}
+
+.section-flexed .section-img {
+  flex: 0 1 35%;
+}
+
+#hero.page-section {
+  position: relative;
+}
+
+#hero .navigation {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+#hero .hero-img {
+  position: absolute;
+  width: 50%;
+  bottom: 0px;
+  right: 5rem;
+}
+
+#camera .section-info .title::before {
+  display: inline-block;
+  content: "";
+  border-top: 1px solid #000;
+  width: 6rem;
+  margin: 0 1rem;
+  transform: translateY(-1rem);
+}
+
+#camera .socials {
+  display: flex;
+  /* align-items: center; */
+  gap: 2rem;
+}
+
+#camera .socials .social {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--gray-dark);
+  color: #fff;
+  position: relative;
+}
+
+#camera .socials .social i {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#photographer.page-section {
+  padding: 0rem;
+}
+
+#photographer .photographer-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#bridge .section-img {
+  position: absolute;
+  top: 50;
+  right: 0;
+  max-width: 100%;
+  max-height: 100%;
+  height: 60vh;
+  margin-right: 164px;
+}
+
+#gallery {
+    display: flex;
+    align-items: center;
+}
+
+#gallery .list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#gallery .list .picture:nth-child(2) {
+    transform: scale(1.5);
+}
+
+#contacts {
+    text-align: center;
+}
+
+#contacts .section-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+}
+
+#contacts .section-info .desc {
+    text-align: center;
+}
+
+#contacts .form {
+    max-width: 50%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+    gap: 1.25rem;
+    grid-template-areas: 
+    "email subject"
+    "msg msg"
+    "submit submit";
+}
+
+#contacts .form .email {
+    grid-area: email;
+}
+
+#contacts .form .subject {
+    grid-area: subject;
+}
+
+#contacts .form .msg {
+    grid-area: msg;
+}
+
+#contacts .form input, 
+.form textarea {
+    background-color: transparent;
+    border: 1px solid var(--gray-black);
+    padding: 0.25rem;
+    width: 100%;
+}
+
+#contacts .form textarea {
+    resize: none;
+}
+
+#contacts .form .btn {
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid var(--gray-black);
+    background-color: var(--gray-black);
+    color: #fff;
+    font-weight: bold;
+    grid-area: submit;
+    margin-bottom: 6rem;
+}
+
+
