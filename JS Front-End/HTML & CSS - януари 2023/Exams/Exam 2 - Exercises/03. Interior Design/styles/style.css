@@ -1,0 +1,192 @@
+@import url(https://use.fontawesome.com/releases/v5.6.3/css/all.css);
+
+:root {
+  --black: #333333;
+  --white-backgr: #f2f0f3;
+  --beige: #bab1ad;
+  --icon-color: #8d8581;
+  --dark-green: #67784d;
+  --background-img: url(../image/image.jpg);
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.adv {
+  max-width: 1350px;
+  margin: 0 116px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.head {
+  background-image: var(--background-img);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 2000px;
+  position: relative;
+}
+
+.head .interior-dsgn {
+  display: inline-block;
+  width: 250px;
+  line-height: 1.7;
+  padding: 32px 84px 32px 15px;
+  position: relative;
+  top: 600px;
+  left: 120px;
+  box-shadow: 3px 6px 7px 0px rgba(0,0,0,0.75);
+}
+
+.head .interior-dsgn .title {
+    text-transform: none;
+    font-size: 40px;
+}
+
+.title {
+  font-family: "Abril Fatface", sans-serif;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.head .legend {
+    width: 350px;
+    position: absolute;
+    top: 900px;
+    right: 46px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    box-shadow: 3px 6px 7px 0px rgba(0,0,0,0.75);
+    padding: 32px 16px 10px 45px;
+    background: linear-gradient(to right, #a19891, #cac8c6);
+
+}
+
+.head .legend .text-pgh {
+    text-align: right;
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(0,0,0,1);
+}
+
+.head .legend i {
+    color: var(--icon-color);
+}
+
+.hero {
+    background-color: var(--white-backgr);
+    padding: 50px 32px 32px 72px;
+}
+
+.hero .title {
+    letter-spacing: 1px;
+    margin-bottom: 32px;
+    font-size: 45px;
+}
+
+.hero .services {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 37rem;
+    margin-bottom: 90px;
+}
+
+.hero .services .service .bolded {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hero .services .service i {
+    color: var(--black);
+    margin-right: 8px;
+}
+
+.horizontal-line {
+    border: 1px solid var(--black);
+    margin-bottom: 20px;
+}
+
+.hero .contacts {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 600px;
+    margin-bottom: 32px;
+}
+
+.hero .contacts .contact .italic {
+    font-style: italic;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.hero .email {
+    padding: 12px 16px;
+    width: 300px;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--beige);
+    margin-right: 12px;
+}
+
+.hero .email::placeholder {
+    color: #fff;
+}
+
+.hero .btn {
+    height: 48px;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--dark-green);
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.aside-menu {
+    position: absolute;
+    right: 0;
+    top: 2000px;
+    background-color: var(--beige);
+    height: 100vh;
+    padding-left: 180px;
+}
+
+.aside-menu .numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.aside-menu .numbers .location {
+    text-transform: uppercase;
+    color: var(--black);
+    font-weight: bold;
+    position: relative;
+    right: 150px;
+}
+
+.aside-menu .numbers .location .number {
+    color: #fff;
+    font-size: 80px;
+    font-weight: 100;
+}
+
+.aside-menu .numbers .location .number .m-letter {
+    text-transform: lowercase;
+}
+
+.aside-menu .numbers .location div {
+    display: flex;
+    flex-direction: column;
+}
+
+.aside-menu .numbers .location div .address {
+    position: relative;
+    bottom: 20px;
+}
