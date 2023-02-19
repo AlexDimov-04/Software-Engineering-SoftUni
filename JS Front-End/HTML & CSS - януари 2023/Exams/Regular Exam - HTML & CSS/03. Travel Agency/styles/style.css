@@ -1,0 +1,171 @@
+@import url(https://use.fontawesome.com/releases/v5.6.3/css/all.css);
+
+:root {
+  --brown: #370511;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+}
+
+.head {
+  background-image: url(../images/landing-photo.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 70vh;
+  position: relative;
+}
+
+.head .nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 300px;
+  padding-top: 10px;
+}
+
+.head .nav .msg {
+  font-weight: bold;
+  color: #000;
+  font-size: 30px;
+}
+
+.head .nav .links {
+  display: flex;
+  gap: 32px;
+}
+
+.btn {
+  border-radius: 32px;
+  color: #fff;
+  background-color: var(--brown);
+  padding: 3px 32px;
+  border: none;
+}
+
+.head .nav .btn {
+  position: relative;
+  right: 280px;
+}
+
+.head .landing-text {
+  position: absolute;
+  top: 230px;
+  left: 460px;
+}
+
+.head .landing-text .title {
+  font-weight: bolder;
+  font-size: 50px;
+}
+
+.head .landing-text .subtitle {
+  margin-bottom: 32px;
+  font-size: 20px;
+}
+
+.head .landing-text div {
+  margin-top: 64px;
+  margin-bottom: 25px;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.hero .cards {
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 32px;
+    margin-right: 600px;
+    margin-bottom: 100px;
+}
+
+.hero .cards .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    text-align: center;
+    gap: 6px;
+}
+
+.hero .cards .card .img {
+  width: 250px;
+  height: 250px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.hero .cards .card .city{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.hero .cards .card .pars {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.hero .cards .card .pars .paragr {
+    color: grey;
+    font-size: 13px;
+}
+
+.hero .titles {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.hero .titles .title {
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.hero .titles .recommendation {
+    color: grey;
+}
+
+.hero .cards .card .card-btn {
+    background-color: white;
+    color: #000;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 10px 25px;
+    border: 1px solid gray;
+}
+
+.foot {
+    padding: 100px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.foot .msg {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.foot > * {
+    color: #fff;
+}
+
+.foot .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.foot .icons{
+    display: flex;
+    gap: 20px;
+}

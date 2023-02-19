@@ -1,0 +1,74 @@
+@import url(https://use.fontawesome.com/releases/v5.6.3/css/all.css);
+
+:root {
+  --dark-purple: #66545e;
+}
+
+body {
+  font-family: Montserat, sans-serif;
+  background: linear-gradient(to right, #d5c19c, #f6e0b5);
+  color: var(--dark-purple);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.entertainment {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.entertainment .card {
+  box-shadow: 1px 2px 38px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 25px;
+  border: 2px solid #000;
+  overflow: hidden;
+  background-color: var(--dark-purple);
+  height: 30vh;
+  width: 21.5vw;
+}
+
+.entertainment .card .arts {
+  width: 100vw;
+  height: 25vh;
+}
+
+.entertainment .card .desc {
+  margin-left: 10px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.entertainment .card img {
+  height: 25vh;
+}
+
+.aside-menu {
+  margin-right: 250px;
+  margin-bottom: 200px;
+  font-size: 18px;
+  width: 250px;
+}
+
+.aside-menu .categories {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.aside-menu .categories .category {
+  font-size: 20px;
+}
+
+.aside-menu .title {
+  margin-bottom: 30px;
+  font-weight: 100;
+  font-size: 30px;
+}
