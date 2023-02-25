@@ -1,3 +1,5 @@
+@import url(https://use.fontawesome.com/releases/v5.6.3/css/all.css);
+
 :root {
   --red: #e30914;
   --grey: #222222;
@@ -163,7 +165,7 @@ body {
     padding: 4rem 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 3rem;
     align-items: center;
   }
 
@@ -171,7 +173,7 @@ body {
     margin-bottom: 0;
   }
 
-  .content-section:nth-of-type(odd) .content{
+  .content-section:nth-of-type(odd) .content {
     order: 2;
   }
 
@@ -223,8 +225,112 @@ body {
   }
 }
 
-@media screen and (min-width:1600px) {
+@media screen and (min-width: 1600px) {
   html {
     font-size: 20px;
   }
+
+  #hero .form .btn {
+    width: unset;
+  }
+}
+
+#faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+#faq .title {
+  font-size: 50px;
+}
+
+#faq .questions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style-type: none;
+  margin-bottom: 80px;
+}
+
+#faq .questions .wrapper {
+  border-radius: 1px;
+  padding: 20px;
+  background-color: var(--grey);
+  display: flex;
+  width: 800px;
+}
+
+#faq .questions .wrapper .question {
+  font-size: 20px;
+}
+
+#faq .questions .wrapper .question {
+  margin-right: auto;
+}
+
+#faq .text-msg {
+  margin-bottom: 5px;
+}
+
+#faq .form {
+  display: flex;
+  justify-content: baseline;
+  margin-bottom: 1rem;
+  padding: 15px 20px;
+  margin-left: 30px;
+}
+
+#faq .form .email {
+  width: 500px;
+  padding: 20px 15px;
+}
+
+#faq .form .btn {
+  font-size: 28px;
+  width: 300px;
+}
+
+#faq .form .btn i {
+  width: 10px;
+}
+
+#foot > * {
+  color: #505050;
+}
+
+#foot {
+  background-color: var(--black);
+  padding: 100px 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#foot .foot-title {
+  position: relative;
+  left: 260px;
+  bottom: 170px;
+  font-size: 20px;
+}
+
+#foot .topics-categories {
+  display: flex;
+  gap: 100px;
+  margin-right: 300px;
+}
+
+#foot .topics-categories .topics {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+#foot .topics-categories .topics .speed {
+  margin-bottom: 42px;
 }
