@@ -12,3 +12,4 @@ function solve(words, string) {
 
     console.log(strings.join(' '))
 }
+

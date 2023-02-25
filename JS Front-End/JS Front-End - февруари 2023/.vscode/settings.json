@@ -1,0 +1,11 @@
+{
+    "debug.javascript.autoAttachFilter": "disabled",
+    "json.schemas": [
+    {
+        "fileMatch": [
+            "/myfile"
+        ],
+        "url": "schemaURL"
+    }
+    ]
+}
