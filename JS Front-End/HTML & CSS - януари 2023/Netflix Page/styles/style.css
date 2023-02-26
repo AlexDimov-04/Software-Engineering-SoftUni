@@ -233,6 +233,7 @@ body {
   #hero .form .btn {
     width: unset;
   }
+
 }
 
 #faq {
@@ -311,14 +312,14 @@ body {
 #foot .foot-title {
   position: relative;
   left: 260px;
-  bottom: 170px;
+  bottom: 200px;
   font-size: 20px;
 }
 
 #foot .topics-categories {
   display: flex;
   gap: 100px;
-  margin-right: 300px;
+  margin-right: 100px;
 }
 
 #foot .topics-categories .topics {
@@ -330,15 +331,70 @@ body {
   font-size: 20px;
 }
 
-
 #foot .topics-categories .topics .speed {
   margin-bottom: 42px;
 }
 
+@media screen and (max-width: 1790px) {
+  #foot{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-@media screen and (max-width:640px) {
+  #foot .foot-title {
+    position: unset;
+    margin-bottom: 100px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  #faq .title {
+    font-size: 40px;
+  }
+
   #faq .questions .wrapper {
-    max-width: 645px;
+    max-width: 700px;
+  }
+
+  #faq .form .email {
+    width: 350px;
+  }
+
+  #faq .form .btn {
+    font-size: 20px;
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #faq .title {
+    font-size: 30px;
+  }
+
+  #faq .questions .wrapper {
+    max-width: 600px;
+  }
+
+  #faq .form .email {
+    width: 280px;
+  }
+
+  #faq .form .btn {
+    font-size: 15px;
+    width: 150px;
+  }
+
+  #foot .topics-categories {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  #faq .questions .wrapper {
+    max-width: 450px;
     overflow: hidden;
   }
 
@@ -352,8 +408,8 @@ body {
   }
 
   #faq .form {
-    display: unset;
     margin-left: 0;
+    align-items: flex-start;
   }
 
   #faq .form .email {
@@ -367,6 +423,99 @@ body {
   #faq .form .btn {
     font-size: 20px;
     width: 230px;
+    padding: 15px;
+  }
+
+  #foot .topics-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-right: 0;
+  }
+
+  #foot .foot-title {
+    text-align: center;
+    bottom: 400px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  #faq .questions .wrapper {
+    max-width: 400px;
+    overflow: hidden;
+  }
+
+  #faq .questions {
+    margin-right: 35px;
+    margin-bottom: 30px;
+  }
+
+  #faq .title {
+    font-size: 25px;
+  }
+
+  #faq .text-msg {
+    font-size: 15px;
+  }
+
+  #faq .form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #faq .form .email {
+    width: 430px;
+    margin-bottom: 15px;
+  }
+
+  #faq .form .email {
+    padding: 15px 10px;
+  }
+
+  #faq .form .btn {
+    font-size: 15px;
+    width: 200px;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  #faq .questions .wrapper {
+    max-width: 230px;
+    overflow: hidden;
+  }
+
+  #faq .questions {
+    margin-right: 35px;
+    margin-bottom: 30px;
+  }
+
+  #faq .title {
+    font-size: 20px;
+    margin-left: 20px;
+  }
+
+  #faq .text-msg {
+    font-size: 12px;
+  }
+
+  #faq .form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #faq .form .email {
+    width: 300px;
+    margin-bottom: 15px;
+  }
+
+  #faq .form .email {
+    padding: 15px 10px;
+  }
+
+  #faq .form .btn {
+    font-size: 15px;
+    width: 200px;
     padding: 15px;
   }
 }
