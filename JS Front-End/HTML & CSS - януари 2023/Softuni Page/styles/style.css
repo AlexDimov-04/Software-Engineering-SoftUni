@@ -1,0 +1,373 @@
+@import url(https://use.fontawesome.com/releases/v5.6.3/css/all.css);
+
+:root {
+  --purple: #9b5dc6;
+  --dark-purple: #14162b;
+  --bright-purple: #606285;
+  --light-grey: #919191;
+  --white: #fff;
+  --foot-color: #2c2c3a;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+footer {
+  font-family: Montserrat, sans-serif;
+}
+
+/* Header styles */
+
+#head {
+  position: fixed;
+  z-index: 1;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  padding: 15px 15px;
+  box-shadow: 0px 8px 19px -15px rgba(0, 0, 0, 0.75);
+  width: 100%;
+}
+
+#head i {
+  font-size: 20px;
+  color: var(--dark-purple);
+}
+
+#head i:hover {
+  color: var(--light-grey);
+  cursor: pointer;
+}
+
+#head .img {
+  width: 100px;
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+#head .navigation {
+  display: flex;
+  align-items: center;
+}
+
+#head .navigation .links {
+  display: none;
+  list-style-type: none;
+}
+
+#head .navigation .btn {
+  margin-right: 2px;
+  background-color: var(--purple);
+  border: none;
+  color: var(--white);
+  border-radius: 16px;
+  padding: 2px 10px;
+  font-weight: 500;
+  font-size: 12px;
+  box-shadow: 7px 7px 10px -8px rgba(0, 0, 0, 0.75);
+}
+
+#head .navigation .btn:hover {
+  background-color: rgb(211, 210, 210);
+  cursor: pointer;
+}
+
+/* Content-section styles */
+
+.content-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 30px;
+}
+
+.text-content {
+  margin-top: 60px;
+}
+
+.text-content .title {
+  font-size: 23px !important;
+  font-weight: bold !important;
+  text-align: center;
+  margin-bottom: 12px;
+  color: var(--bright-purple);
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.text-content .pgh {
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Diplomas section styles */
+
+#diplomas .text-content .credits-note {
+  font-size: 12px;
+  color: var(--light-grey);
+}
+
+#diplomas .diplomas-imgs .img:nth-child(2) {
+  position: absolute;
+  bottom: -46px;
+  left: -1px;
+}
+
+/* Certificates styles */
+
+#certificates {
+  padding: 35px 40px;
+  background-color: var(--dark-purple);
+}
+
+#certificates .text-content {
+  margin-top: -15px;
+}
+
+#certificates .text-content .title {
+  color: var(--white);
+  margin-bottom: 25px;
+}
+
+#certificates .text-content .pgh {
+  color: var(--white);
+  font-size: 14px;
+}
+
+/* Mentorship styles */
+
+#mentorship .text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -5px;
+  margin-bottom: 25px;
+}
+
+#mentorship .text-content .pgh {
+  font-size: 14px;
+}
+
+#mentorship .text-content .btn-mentorship {
+  all: unset;
+  border: 1px solid var(--purple);
+  color: var(--purple);
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 8px 16px;
+}
+
+#mentorship .text-content .btn-mentorship:hover {
+  color: rgb(211, 210, 210);
+  border-color: rgb(211, 210, 210);
+  cursor: pointer;
+}
+
+#foot {
+  background-color: var(--foot-color);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 40px 20px;
+}
+
+#foot > .container:first-child {
+  margin-top: 60px;
+}
+
+#foot .container .foot-title {
+  color: var(--purple);
+}
+
+#foot .container .abouts {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  line-height: 1.9;
+}
+
+#foot .container .abouts .field,
+#foot .container .rights,
+#foot .container .abouts .icon {
+  color: var(--white);
+}
+
+#foot .container .abouts .field:hover,
+#foot .container .rights:hover,
+#foot .container .abouts .icon:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#foot .container:last-child {
+  margin-top: 50px;
+}
+
+#foot .container:last-child .license {
+  margin: 20px 50px;
+}
+
+#foot .container:last-child .license .rights {
+  font-size: 10px;
+}
+
+@media screen and (min-width: 640px) {
+  #head {
+    justify-content: space-evenly;
+    padding: 0px 2px;
+  }
+
+  #head i {
+    display: none;
+  }
+
+  #head .navigation .links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+    margin-right: 10px;
+  }
+
+  #head .img {
+    margin: 0;
+  }
+
+  #head .navigation .links .link {
+    font-size: 10px;
+  }
+
+  #head .navigation .links .link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: var(--dark-purple);
+  }
+
+  .text-content {
+    margin-bottom: 10px;
+  }
+
+  .text-content .title {
+    font-size: 30px !important;
+  }
+
+  .text-content .pgh {
+    font-size: 16px;
+  }
+
+  .diplomas-imgs {
+    height: 500px;
+  }
+
+  #diplomas .text-content .credits-note {
+    font-size: 15px;
+  }
+
+  #diplomas .diplomas-imgs .img:nth-child(2) {
+    position: relative;
+    bottom: 375px;
+    left: 5px;
+    width: 500px;
+  }
+
+  #certificates .text-content .pgh {
+    font-size: 18px;
+  }
+
+  #certificates .text-content {
+    margin-bottom: 10px;
+  }
+
+  #mentorship .text-content .pgh {
+    font-size: 15px;
+  }
+
+  #foot > .container:first-child {
+    margin-top: 0;
+  }
+
+  #foot .container:last-child {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .content-section {
+    padding: 25px 50px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #head {
+    justify-content: unset;
+  }
+
+  #head .img {
+    margin-right: auto;
+    margin-left: 70px;
+  }
+
+  #head .navigation .links {
+    gap: 30px;
+    margin-right: 20px;
+  }
+
+  #head .navigation .links .link,
+  #head .navigation .btn {
+    font-size: 15px;
+  }
+
+  .text-content .title {
+    font-size: 40px !important;
+  }
+
+  .text-content .pgh {
+    font-size: 25px;
+    margin-bottom: 70px;
+  }
+
+  #diplomas .text-content .credits-note {
+    font-size: 22px;
+  }
+
+  #certificates .text-content .pgh {
+    font-size: 25px;
+  }
+
+  .certificates-imgs .img {
+    width: 450px;
+  }
+
+  #mentorship .text-content .pgh {
+    font-size: 25px;
+  }
+
+  #mentorship .text-content .btn-mentorship {
+    border-radius: 60px;
+    padding: 8px 60px;
+    font-size: 30px;
+  }
+
+  #mentorship .mentorship-imgs .img {
+    width: 600px;
+  }
+
+  #foot {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #foot .container:last-child{
+    grid-column-start: 2;
+    display: flex;
+  }
+
+  #foot .container:last-child .license {
+    margin: 20px 50px;
+    display: flex;
+    align-items: end;
+}
+}
