@@ -215,7 +215,50 @@ footer {
   font-size: 10px;
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 440px) {
+
+  .text-content {
+    margin-bottom: 10px;
+  }
+
+  .text-content .title {
+    font-size: 30px !important;
+  }
+
+  .text-content .pgh {
+    font-size: 16px;
+  }
+
+  .diplomas-imgs {
+    height: 500px;
+  }
+
+  #diplomas .text-content .credits-note {
+    font-size: 15px;
+  }
+
+  #diplomas .diplomas-imgs .img:nth-child(2) {
+    position: relative;
+    bottom: 280px;
+    left: 5px;
+    width: 500px;
+  }
+
+  #certificates .text-content .pgh {
+    font-size: 18px;
+  }
+
+  #mentorship .text-content .pgh {
+    font-size: 15px;
+  }
+
+  #foot > .container:first-child,
+  #foot .container:last-child{
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 620px) {
   #head {
     justify-content: space-evenly;
     padding: 0px 2px;
@@ -245,53 +288,6 @@ footer {
     cursor: pointer;
     text-decoration: underline;
     color: var(--dark-purple);
-  }
-
-  .text-content {
-    margin-bottom: 10px;
-  }
-
-  .text-content .title {
-    font-size: 30px !important;
-  }
-
-  .text-content .pgh {
-    font-size: 16px;
-  }
-
-  .diplomas-imgs {
-    height: 500px;
-  }
-
-  #diplomas .text-content .credits-note {
-    font-size: 15px;
-  }
-
-  #diplomas .diplomas-imgs .img:nth-child(2) {
-    position: relative;
-    bottom: 375px;
-    left: 5px;
-    width: 500px;
-  }
-
-  #certificates .text-content .pgh {
-    font-size: 18px;
-  }
-
-  #certificates .text-content {
-    margin-bottom: 10px;
-  }
-
-  #mentorship .text-content .pgh {
-    font-size: 15px;
-  }
-
-  #foot > .container:first-child {
-    margin-top: 0;
-  }
-
-  #foot .container:last-child {
-    margin-top: 0;
   }
 }
 
@@ -360,7 +356,7 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  #foot .container:last-child{
+  #foot .container:last-child {
     grid-column-start: 2;
     display: flex;
   }
@@ -369,5 +365,122 @@ footer {
     margin: 20px 50px;
     display: flex;
     align-items: end;
+  }
 }
+
+@media screen and (min-width: 1600px) {
+  .content-section,
+  #foot {
+    padding: 10px 70px;
+  }
+
+  #head {
+    padding: 8px 15px;
+  }
+  #head .img {
+    width: 120px;
+  }
+
+  #head .navigation .btn {
+    margin-right: 55px;
+    padding: 5px 12px;
+  }
+
+  #diplomas {
+    flex-direction: row;
+  }
+
+  .text-content .title,
+  .text-content .pgh,
+  .text-content .credits-note {
+    text-align: left;
+  }
+
+  .text-content .title {
+    font-weight: 400 !important;
+    font-size: 30px !important;
+  }
+
+  .text-content .pgh {
+    margin-bottom: 30px;
+  }
+
+  #diplomas .text-content {
+    width: 50vw;
+  }
+
+  #diplomas .diplomas-imgs .img:first-child {
+    position: relative;
+    width: 800px;
+    bottom: 250px;
+    left: 40px;
+    z-index: -1;
+  }
+
+  #diplomas .diplomas-imgs .img:nth-child(2) {
+    bottom: 600px;
+    left: 120px;
+    width: 520px;
+  }
+
+  #certificates {
+    flex-direction: row;
+    padding: 55px 80px;
+  }
+
+  #certificates .text-content {
+    margin-top: 30px;
+  }
+
+  #certificates .text-content .title {
+    font-size: 28px !important;
+  }
+
+  #certificates .text-content .pgh,
+  #mentorship .text-content .btn-mentorship,
+  #mentorship .text-content .pgh,
+  #diplomas .text-content .credits-note,
+  .text-content .pgh {
+    font-size: 20px;
+  }
+
+  .certificates-imgs .img {
+    position: relative;
+    top: 100px;
+    width: 1000px;
+  }
+
+  #mentorship {
+    flex-direction: row-reverse;
+    gap: 55px;
+    padding: 40px 70px;
+  }
+
+  #mentorship .mentorship-imgs .img {
+    width: 2500px;
+  }
+
+  #mentorship .text-content {
+    align-items: flex-start;
+  }
+
+  #foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 30px 70px;
+  }
+
+  #foot .container:last-child {
+    flex-direction: column;
+  }
+
+  #foot .container:last-child .license .rights {
+    font-size: 15px;
+  }
+
+  #foot .container .foot-title {
+    margin-left: 40px;
+  }
 }
