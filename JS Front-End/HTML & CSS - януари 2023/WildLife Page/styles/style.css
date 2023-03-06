@@ -1,0 +1,335 @@
+:root {
+  --blue: #116dff;
+  --orange: #ef572c;
+  --light-orange: #f89825;
+  --black: #000;
+  --white: #fff;
+  --cyan: #7eb7e4;
+}
+
+/* headers */
+
+.fixed-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border: none;
+  background-color: var(--orange);
+  color: var(--white);
+  font-weight: bold;
+  padding: 15px 45px;
+  border-radius: 50px;
+  font-size: 20px;
+}
+
+.fixed-btn:hover {
+  cursor: pointer;
+}
+
+#headers {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+
+#head {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background-color: var(--white);
+}
+
+#head > * {
+  font-family: Merriweather, sans-serif;
+}
+
+body:not(#head) {
+  font-family: Gill Sans, Helvetica, sans-serif;
+}
+
+#head ul {
+  list-style-type: none;
+}
+
+/* header 1 */
+
+.head-first .icons {
+  display: flex;
+  gap: 30px;
+  margin-right: 100px;
+}
+
+.head-first .icons .icon:first-child {
+  width: 70px;
+  padding-right: 30px;
+  border-right: 1px solid var(--black);
+}
+
+.head-first .icons .icon:nth-child(2) {
+  width: 20px;
+  margin-bottom: 2px;
+}
+
+.head-first .head-img {
+  margin-right: auto;
+  width: 70px;
+}
+
+.head-first .icon-img {
+  width: 46px;
+}
+
+.head-first .linkers {
+  display: flex;
+  gap: 20px;
+  margin-right: 25px;
+}
+
+.head-first .linkers .link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.head-first .linkers .link:nth-child(2) {
+  text-decoration: underline;
+}
+
+.head-first .linkers .link:nth-child(2):hover {
+  color: var(--blue);
+}
+
+.head-first .head-btn {
+  background-color: var(--blue);
+  border: none;
+  color: var(--white);
+  padding: 10px 30px;
+  border-radius: 40px;
+}
+
+.head-first .head-btn:hover {
+  background-color: #3f87fa;
+  cursor: pointer;
+}
+
+/* header 2 */
+
+#head.head-second {
+  padding-right: 0px;
+  background: linear-gradient(
+    180deg,
+    rgba(236, 236, 236, 1) 0%,
+    rgba(255, 255, 255, 1) 27%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.head-second .heart-img {
+  width: 60px;
+  margin-right: 6px;
+}
+
+.head-second .text {
+  margin-right: auto;
+}
+
+.head-second .buttons {
+  display: flex;
+}
+
+.head-second .buttons button {
+  all: unset;
+  color: var(--white);
+  padding: 25px;
+}
+
+.head-second .buttons button:hover {
+  cursor: pointer;
+}
+
+.head-second .buttons button:first-child {
+  color: var(--black);
+}
+
+.head-second .buttons button:first-child:hover {
+  color: #4f4f4f;
+}
+
+.head-second .buttons button:nth-child(2) {
+  background-color: var(--orange);
+}
+
+.head-second .buttons button:nth-child(2):hover,
+.head-second .buttons button:nth-child(3):hover {
+  background-color: var(--black);
+}
+
+.head-second .buttons button:nth-child(3) {
+  background-color: var(--light-orange);
+}
+
+.head-second .buttons button:nth-child(4) {
+  background-color: var(--black);
+}
+
+.head-second .buttons button:nth-child(4):hover {
+  color: var(--light-orange);
+}
+
+.head-second .buttons button:nth-child(4) i {
+  margin-left: 15px;
+}
+
+/* wildlife section*/
+
+#wildlife {
+  height: 935px;
+}
+
+#wildlife .image-container {
+  position: relative;
+  top: 140px;
+  height: 800px;
+  overflow: hidden;
+}
+
+#wildlife .image-container .tiger-img {
+  width: 100%;
+  height: 135%;
+  object-fit: cover;
+}
+
+#wildlife .image-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+}
+
+#wildlife .hero-content {
+  position: absolute;
+  left: 100px;
+  bottom: 250px;
+  width: 800px;
+}
+
+#wildlife .hero-content > * {
+  text-align: left;
+}
+
+#wildlife .hero-content .title {
+  font-size: 100px;
+  color: var(--white);
+  position: relative;
+}
+
+#wildlife .hero-content .title::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 18%;
+  height: 30px;
+  background-color: var(--orange);
+}
+
+#wildlife .hero-content .title .bolded {
+  color: var(--orange);
+}
+
+#wildlife .hero-content div {
+  width: 350px;
+}
+
+#wildlife .hero-content .par {
+  color: var(--white);
+}
+
+/* volunteers */
+#volunteers {
+  padding: 100px 0;
+  margin-bottom: 50px;
+}
+
+#volunteers .section-btn {
+  position: relative;
+  left: 160px;
+  bottom: 130px;
+  padding: 25px 160px;
+  border: none;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 14px;
+}
+
+#volunteers .section-btn:hover {
+  background-color: var(--orange);
+  cursor: pointer;
+}
+
+
+#volunteers > div{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#volunteers div .number {
+  font-size: 120px;
+  color: var(--orange);
+}
+
+#volunteers div .content {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Page-cards */
+
+#page-cards .cards .btn {
+  background-color: unset;
+  color: var(--white);
+  border: 1px solid var(--white);
+  padding: 10px 12px;
+}
+
+#page-cards .cards .btn:hover {
+  cursor: pointer;
+  color: var(--black);
+  background-color: var(--white);
+}
+
+#page-cards .cards:first-child{
+  display: flex;
+}
+
+#page-cards .cards:first-child .image-animal .img {
+  width: 500px;
+  height: 400px;
+  object-fit: cover;
+}
+
+#page-cards .cards:first-child .last-chance {
+  background-color: var(--black);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#page-cards .cards:first-child .projects {
+  background-color: var(--cyan);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
