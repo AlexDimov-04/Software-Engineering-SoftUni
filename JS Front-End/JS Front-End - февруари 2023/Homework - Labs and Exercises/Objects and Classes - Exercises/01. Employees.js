@@ -5,7 +5,7 @@ function employees(array) {
         people[name] = name.length;
     }
 
-    array.forEach(name => {
-        console.log(`Name: ${name} -- Personal Number: ${name.length}`);
-    });
+    for (const key in object) { 
+        console.log(`Name: ${key} -- Personal Number: ${people[key]}`);
+    }
 }
