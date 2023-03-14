@@ -1,0 +1,245 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: Yanone Kaffeesatz, sans-serif;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+  background-size: cover;
+}
+
+#head {
+  max-width: 1870px;
+  margin: 10px auto;
+}
+
+#head > * {
+  color: #fff;
+}
+
+#head::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 115vh;
+  background-color: black;
+  opacity: 0.4;
+}
+
+.navigation {
+  position: fixed;
+  z-index: 1;
+}
+
+#head .image-section {
+  width: 100%;
+  height: 112vh;
+  object-fit: cover;
+}
+
+#head .navigation .links .link .image {
+  width: 60px;
+}
+
+#head .navigation .links {
+  display: flex;
+  align-items: center;
+}
+
+#head .navigation .links > * {
+  color: #fff;
+}
+
+.links .link i:not(:last-child) {
+  margin-top: 50px;
+}
+
+.links .link button {
+  all: unset;
+  position: relative;
+  left: 30px;
+  bottom: 20px;
+  background-color: rgb(255, 84, 113);
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+#head .navigation .links .link:first-child {
+  margin-left: 15px;
+  margin-right: 20px;
+  width: 80px;
+}
+
+#head .navigation .links .link:nth-child(2) {
+  margin-right: 500px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+#head .navigation .links .link:nth-child(6) {
+  margin-right: 360px;
+}
+
+#head .navigation .links .link:nth-child(3),
+#head .navigation .links .link:nth-child(4),
+#head .navigation .links .link:nth-child(5) {
+  margin-right: 50px;
+}
+
+#head .navigation .links .link:nth-child(3),
+#head .navigation .links .link:nth-child(4),
+#head .navigation .links .link:nth-child(5),
+#head .navigation .links .link:nth-child(6) {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#head .navigation .links .link a:hover {
+  color: rgb(102, 101, 101);
+}
+
+#head .navigation .links .link:nth-child(7),
+#head .navigation .links .link:nth-child(8),
+#head .navigation .links .link:nth-child(9),
+#head .navigation .links .link:nth-child(10) {
+  margin-right: 50px;
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+#head .navigation .links .link:nth-child(7) {
+  margin-bottom: 20px;
+}
+
+#head .navigation .links .link:nth-child(7):hover {
+  color: rgb(0, 0, 29);
+  cursor: pointer;
+}
+
+#head .navigation .links .link:nth-child(8):hover {
+  color: rgb(205, 0, 0);
+  cursor: pointer;
+}
+
+#head .navigation .links .link:nth-child(9):hover {
+  color: darkblue;
+  cursor: pointer;
+}
+
+#head .navigation .links .link:nth-child(10):hover {
+  color: #000;
+  cursor: pointer;
+}
+
+#head .navigation .links .link a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.main-content {
+  position: absolute;
+  top: 0;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 400px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  top: 200px;
+}
+
+.card .img-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card {
+  width: 300px;
+  aspect-ratio: 1/1.5;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+}
+
+.card .content {
+  position: absolute;
+  bottom: -320px;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  transition: bottom 300ms linear;
+}
+
+.card:first-child .content {
+  background: linear-gradient(
+    180deg,
+    rgba(208, 68, 202, 0) 0%,
+    rgb(81, 85, 20) 30%,
+    rgb(81, 85, 20) 100%
+  );
+}
+
+.card:nth-child(2) .content {
+  background: linear-gradient(
+    180deg,
+    rgba(208, 68, 202, 0) 0%,
+    rgb(228, 125, 41) 30%,
+    rgb(228, 125, 41) 100%
+  );
+}
+
+.card:nth-child(3) .content {
+    background: linear-gradient(
+      180deg,
+      rgba(208, 68, 202, 0) 0%,
+      rgb(120, 71, 15) 30%,
+      rgb(120, 71, 15) 100%
+    );
+  }
+
+
+.card .content .meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.card .content .title {
+  font-size: 22px;
+  text-align: center;
+}
+
+.card .content .desc {
+  height: 312px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.card:hover .content {
+  bottom: 0px;
+  cursor: pointer;
+}
+
+.card .content .desc a {
+  color: #fff;
+  text-decoration: none;
+}

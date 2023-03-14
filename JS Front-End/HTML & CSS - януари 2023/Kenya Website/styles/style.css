@@ -1,0 +1,230 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: Yanone Kaffeesatz, sans-serif;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+  background-size: cover;
+}
+
+#head-section {
+  max-width: 1870px;
+  margin: 10px auto;
+}
+
+#head-section > * {
+  color: #fff;
+}
+
+#head-section::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 115vh;
+  background-color: black;
+  opacity: 0.4;
+}
+
+.navigation {
+  position: fixed;
+  padding: 10px 5px;
+  z-index: 1;
+}
+
+#head-section .image-section {
+  width: 100%;
+  height: 112vh;
+  object-fit: cover;
+}
+
+#head-section .navigation .links .link .image {
+  width: 60px;
+}
+
+#head-section .navigation .links {
+  display: flex;
+  align-items: center;
+}
+
+#head-section .navigation .links > * {
+  color: #fff;
+}
+
+.links .link i:not(:last-child) {
+  margin-top: 50px;
+}
+
+.links .link button {
+  all: unset;
+  position: relative;
+  left: 30px;
+  bottom: 20px;
+  background-color: rgb(255, 84, 113);
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+#head-section .navigation .links .link:first-child {
+  margin-left: 15px;
+  margin-right: 20px;
+  width: 80px;
+}
+
+#head-section .navigation .links .link:nth-child(2) {
+  margin-right: 500px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+#head-section .navigation .links .link:nth-child(6) {
+  margin-right: 360px;
+}
+
+#head-section .navigation .links .link:nth-child(3),
+#head-section .navigation .links .link:nth-child(4),
+#head-section .navigation .links .link:nth-child(5) {
+  margin-right: 50px;
+}
+
+#head-section .navigation .links .link:nth-child(3),
+#head-section .navigation .links .link:nth-child(4),
+#head-section .navigation .links .link:nth-child(5),
+#head-section .navigation .links .link:nth-child(6) {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#head-section .navigation .links .link a:hover {
+  color: rgb(102, 101, 101);
+}
+
+#head-section .navigation .links .link:nth-child(7),
+#head-section .navigation .links .link:nth-child(8),
+#head-section .navigation .links .link:nth-child(9),
+#head-section .navigation .links .link:nth-child(10) {
+  margin-right: 50px;
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+#head-section .navigation .links .link:nth-child(7) {
+  margin-bottom: 20px;
+}
+
+#head-section .navigation .links .link:nth-child(7):hover {
+  color: rgb(0, 0, 29);
+  cursor: pointer;
+}
+
+#head-section .navigation .links .link:nth-child(8):hover {
+  color: rgb(205, 0, 0);
+  cursor: pointer;
+}
+
+#head-section .navigation .links .link:nth-child(9):hover {
+  color: darkblue;
+  cursor: pointer;
+}
+
+#head-section .navigation .links .link:nth-child(10):hover {
+  color: #000;
+  cursor: pointer;
+}
+
+#head-section .navigation .links .link a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.main-content {
+  position: absolute;
+  top: 0;
+}
+
+#head-section .title {
+  font-weight: bold;
+  font-size: 200px;
+  position: relative;
+  top: 200px;
+  left: 60px;
+}
+
+#head-section .title::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 30%;
+  height: 25px;
+  background-color: #fff;
+}
+
+#head-section .content {
+  position: relative;
+  top: 220px;
+  left: 520px;
+  width: 400px;
+}
+
+#head-section .content .heading {
+  font-size: 50px;
+  padding-bottom: 20px;
+}
+
+#head-section .content .heading::after {
+  content: "";
+  position: absolute;
+  top: 155px;
+  right: 320px;
+  left: 1px;
+  width: 120%;
+  height: 2px;
+  background-color: #fff;
+}
+
+#head-section .content .pgh {
+  font-size: 22px;
+}
+
+#head-section .content .author {
+  position: relative;
+  left: 350px;
+  font-size: 20px;
+}
+
+#head-section .play {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 20px;
+  top: 330px;
+}
+
+#head-section .play .image {
+  width: 100px;
+  margin-right: 10px;
+}
+
+#head-section .play .image:hover {
+  cursor: pointer;
+}
+
+#head-section .play a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+#head-section .rights {
+  position: relative;
+  left: 1600px;
+  top: 280px;
+  width: 250px;
+}
