@@ -17,9 +17,10 @@ function shoppingList(array) {
         }
         else if (command.includes('Unnecessary')) {
             let item = command[1];
+            let index = groceries.indexOf(item);
 
             if (groceries.includes(item)) {
-                groceries.pop(groceries.indexOf(item));
+                groceries.splice(index, 1)
             }
         }
         else if (command.includes('Correct')) {
@@ -31,9 +32,10 @@ function shoppingList(array) {
         }
         else if (command.includes('Rearrange')) {
             let item = command[1];
+            let index = groceries.indexOf(item);
 
             if (groceries.includes(item)) {
-                groceries.pop(groceries.indexOf(item));
+                groceries.splice(index, 1);
                 groceries.push(item);
             }
         }

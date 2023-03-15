@@ -40,7 +40,7 @@ function pianist(array) {
                 composers[piece].key = newKey;
                 console.log(`Changed the key of ${piece} to ${newKey}!`);
             } else {
-                console.log(`Invalid operation! ${piece} does not exist in the collection."`);
+                console.log(`Invalid operation! ${piece} does not exist in the collection.`);
             }
         }
         
