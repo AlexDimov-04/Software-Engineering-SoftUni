@@ -7,31 +7,28 @@ h4 {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.kenya-flag {
+  width: 130px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 20px;
+  z-index: 1;
+}
+
+#head {
+  height: 40vh;
+}
+
+#head,
+#foot {
   background-image: url(https://images.unsplash.com/photo-1528035015334-80868324e60e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  overflow-x: hidden;
-}
-
-body > * {
-  color: #fff;
-}
-
-hr {
-  width: 10000px;
-  position: relative;
-  top: 370px;
-  right: 230px;
-  border: none;
-  height: 3px;
-  background: #fff;
-  z-index: -1;
-}
-
-#head {
-  max-width: 1870px;
-  margin: 10px auto;
 }
 
 #head > * {
@@ -45,10 +42,10 @@ hr {
   top: 0;
   left: 0;
   width: 100%;
-  height: 396.5%;
+  height: 40%;
   background-color: black;
-  opacity: 0.4;
-  z-index: -1;
+  opacity: 0.5;
+  z-index: 1;
 }
 
 .navigation {
@@ -162,216 +159,131 @@ hr {
   color: #fff;
 }
 
-.main-content {
-  position: absolute;
-  top: 0;
-}
-
-.cards {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.card {
-  width: 400px;
-  border-radius: 6px;
-  overflow: hidden;
-  position: relative;
-  color: #fff;
-  top: 200px;
-  border: 3px solid #fff;
-}
-
-.card .img-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card {
-  width: 300px;
-  aspect-ratio: 1/1.5;
-  border-radius: 6px;
-  overflow: hidden;
-  position: relative;
-  color: #fff;
-}
-
-.card .content {
-  position: absolute;
-  bottom: -320px;
-  left: 0;
-  width: 100%;
-  padding: 12px;
-  transition: bottom 300ms linear;
-}
-
-.card:first-child .content {
-  background: linear-gradient(
-    180deg,
-    rgba(208, 68, 202, 0) 0%,
-    rgb(81, 85, 20) 30%,
-    rgb(81, 85, 20) 100%
-  );
-}
-
-.card:nth-child(2) .content {
-  background: linear-gradient(
-    180deg,
-    rgba(208, 68, 202, 0) 0%,
-    rgb(228, 125, 41) 30%,
-    rgb(228, 125, 41) 100%
-  );
-}
-
-.card:nth-child(3) .content {
-  background: linear-gradient(
-    180deg,
-    rgba(208, 68, 202, 0) 0%,
-    rgb(120, 71, 15) 30%,
-    rgb(120, 71, 15) 100%
-  );
-}
-
-.card .content .meta {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  text-align: center;
-  margin-bottom: 12px;
-}
-
-.card .content .title {
-  font-size: 22px;
-  text-align: center;
-}
-
-.card .content .desc {
-  height: 312px;
-  overflow: hidden;
-  margin-top: 10px;
-}
-
-.card:hover .content {
-  bottom: 0px;
-  cursor: pointer;
-}
-
-.card .content .desc a {
-  color: #fff;
-  text-decoration: none;
-}
-
-#hero > .title {
+#head .title {
   font-size: 150px;
   text-align: center;
   position: relative;
   top: 100px;
+  z-index: 1;
 }
 
-#hero > .title::before {
-  content: "";
-  position: absolute;
-  top: 550px;
-  right: 1px;
-  width: 150%;
-  height: 3px;
-  background-color: #fff;
-}
-
-#nature {
-  margin-top: 500px;
-}
-
-.hero-section {
-  display: flex;
-  justify-content: center;
-}
-
-.hero-section .elements {
-  width: 1500px;
-}
-
-.hero-section .elements > * {
-  text-align: center;
-}
-
-#nature .elements .image {
-  width: 600px;
-  border-radius: 5px;
-}
-
-.hero-section .elements .section-title {
-  font-size: 80px;
-}
-
-.hero-section .elements p {
-  font-size: 19px;
-}
-
-#nature .elements div {
-  display: flex;
-  align-items: center;
-}
-
-#gallery {
-  display: flex;
-  align-items: center;
-  margin-top: 200px;
-}
-
-#gallery .list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-#gallery .list .picture:nth-child(2) {
-  transform: scale(1.4);
-  position: relative;
-  top: 20px;
-}
-
-#gallery .list .picture .image {
-  border: 3px solid #fff;
-}
-
-#rivers {
-  margin-top: 300px;
-  padding-bottom: 150px;
+#hero {
+  background-color: #d8d8d8;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 150px;
 }
 
-#rivers .pictures .list {
+#hero article {
+  margin: 60px 0;
+  margin-right: 800px;
+}
+
+#hero article img {
+  width: 700px;
+  height: 400px;
+  object-fit: cover;
+}
+
+#hero .hero-section .content {
+  width: 700px;
+}
+
+#hero .hero-section .headings {
   display: flex;
-  gap: 150px;
+  padding: 15px;
+  border-bottom: 1px solid darkgray;
 }
 
-#rivers .pictures .picture img {
-  border-radius: 100%;
-  width: 200px;
-  height: 200px;
-  border: 3px solid #fff;
-}
-
-#rivers .pictures .picture {
-  width: 200px;
-  height: 200px;
-}
-
-#rivers .elements hr {
+#hero .hero-section .headings h3 {
+  margin-right: auto;
   position: relative;
-  top: 260px;
+  right: 14px;
+  font-size: 25px;
+}
+
+#hero .hero-section .headings span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#hero .hero-section .headings span i {
+  font-weight: bold;
+}
+
+#hero .hero-section .content p {
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+#hero .hero-section .content .btn {
+  all: unset;
+  background-color: rgb(24, 24, 24);
+  padding: 10px;
+}
+
+#hero .hero-section .content .btn a {
+  text-decoration: none;
+  color: #fff;
+}
+
+aside {
+  position: absolute;
+  right: 400px;
+  top: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+aside .container h2 {
+  font-size: 50px;
+}
+
+aside .container div img {
+  width: 100px;
+}
+
+aside .container .parag-container {
+  width: 300px;
+}
+
+aside .container .image {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+aside .container .image:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+aside .container .image img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+aside .container .image span {
+  font-size: 18px;
+}
+
+aside .container .list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+aside .container .list .item {
+  border-bottom: 1px dashed black;
 }
 
 #foot {
   display: flex;
   justify-content: space-evenly;
   gap: 120px;
-  padding-bottom: 15px;
+  padding: 50px;
+  padding-top: 1px;
 }
 
 #foot .container {
@@ -397,6 +309,7 @@ hr {
 
 #foot .container .icons .icon {
   background-color: #000;
+  color: #fff;
   padding: 20px;
   border-radius: 100%;
   font-size: 20px;
@@ -473,4 +386,19 @@ hr {
 
 #foot .newsletter .photos .photo img {
   width: 100px;
+}
+
+#foot::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 53.1%;
+  background-color: black;
+  opacity: 0.5;
+}
+
+#foot > * {
+    z-index: 1;
+    color: #fff;
 }
