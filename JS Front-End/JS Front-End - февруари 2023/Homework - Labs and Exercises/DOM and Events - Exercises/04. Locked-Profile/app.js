@@ -1,3 +1,5 @@
 function lockedProfile() {
-    console.log('TODO...')
+    const btns = Array.from(document.getElementsByTagName('button'));
+
+
 }
