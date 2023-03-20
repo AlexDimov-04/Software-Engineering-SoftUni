@@ -1,24 +1,22 @@
 function lockedProfile() {
     const btns = Array.from(document.getElementsByTagName('button'));
-    btns
-        .forEach((btn) => {
-            btn.addEventListener('click', toggleInformation);
-        });
 
-    function toggleInformation(e) {
-        debugger;
+    btns.forEach((btn) => {
+        btn.addEventListener('click', triggerBtn);
+    });
+
+    function triggerBtn(e) {
         const btn = e.currentTarget;
-        const currentProfile = btn.parentNode;
-        const children = Array.from(currentProfile.children);
-        const unlockRadioInput = children[4];
-        const additionalInformationDiv = children[9];
+        const children = Array.from(btn.parentNode.children);
+        const unlockField = children[4];
+        const hiddenData = children[9];
 
-        if (unlockRadioInput.checked) {
+        if (unlockField.checked) {
             if (btn.textContent === 'Show more') {
-                additionalInformationDiv.style.display = 'block';
+                hiddenData.style.display = 'block';
                 btn.textContent = 'Hide it';
             } else {
-                additionalInformationDiv.style.display = 'none';
+                hiddenData.style.display = 'none';
                 btn.textContent = 'Show more';
             }
         }
