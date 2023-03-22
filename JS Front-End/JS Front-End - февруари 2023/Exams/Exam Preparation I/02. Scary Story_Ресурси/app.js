@@ -1,6 +1,7 @@
+window.addEventListener("load", solve)
+
 
 function solve() {
-  window.addEventListener("load", solve)
   const firstName = document.getElementById('first-name');
   const lastName = document.getElementById('last-name');
   const age = document.getElementById('age');
@@ -31,33 +32,37 @@ function solve() {
   deleteBtn.classList.add('delete-btn');
 
   publishBtn.addEventListener('click', () => {
-    article.textContent = '';
+    if (firstName.value.length > 0 && lastName.value.length > 0 && age.value.length > 0 && storyTitle.value.length > 0 && genre.value.length > 0 && textarea.value.length > 0) {
+      article.textContent = '';
 
-    article.insertAdjacentHTML("beforeend", `
+      article.innerHTML += `
       <h4>Name: ${firstName.value + ' ' + lastName.value}</h4> 
       <p>Age: ${age.value}</p>
       <p>Title: ${storyTitle.value}</p>
       <p>Genre: ${genre.value}</p>
       <p>${textarea.value}</p>
-      `);
+  `;
 
-    inputData = [];
-    inputData.push(firstName.value, lastName.value, age.value, storyTitle.value, genre.value, textarea.value)
 
-    previewList.appendChild(li);
-    li.appendChild(article);
 
-    li.appendChild(saveBtn);
-    li.appendChild(editBtn);
-    li.appendChild(deleteBtn);
+      inputData = [];
+      inputData.push(firstName.value, lastName.value, age.value, storyTitle.value, genre.value, textarea.value)
 
-    firstName.value = '';
-    lastName.value = '';
-    age.value = '';
-    storyTitle.value = '';
-    genre.value = '';
-    textarea.value = '';
-    publishBtn.disabled = true;
+      previewList.appendChild(li);
+      li.appendChild(article);
+
+      li.appendChild(saveBtn);
+      li.appendChild(editBtn);
+      li.appendChild(deleteBtn);
+
+      firstName.value = '';
+      lastName.value = '';
+      age.value = '';
+      storyTitle.value = '';
+      genre.value = '';
+      textarea.value = '';
+      publishBtn.disabled = true;
+    }
   });
 
 
