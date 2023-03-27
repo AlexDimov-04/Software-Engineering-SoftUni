@@ -5,6 +5,7 @@ function attachEvents() {
   const submitBtn = document.querySelector('#form > button');
   const formHeader = document.querySelector('#form > h3');
   let editBookId = null;
+  let allBooksData = {};
   const BASE_URL = 'http://localhost:3030/jsonstore/collections/books/';
 
   loadBooks.addEventListener('click', loadAllBooksHandler);
@@ -14,7 +15,7 @@ function attachEvents() {
     booksContainer.innerHTML = '';
     const booksRes = await fetch(BASE_URL);
     const booksData = await booksRes.json();
-    allBooks = booksData;
+    allBooksData = booksData;
 
     for (const bookId in booksData) {
       const { author, title } = booksData[bookId];
@@ -30,15 +31,9 @@ function attachEvents() {
       editBtn.textContent = 'Edit';
       deleteBtn.textContent = 'Delete';
       deleteBtn.id = bookId;
+      editBtn.id = bookId;
 
-      editBtn.addEventListener('click', () => {
-        editBookId = bookId;
-        formHeader.textContent = 'Edit FORM';
-        submitBtn.textContent = 'Save';
-        titleInput.value = title;
-        authorInput.value = author;
-      });
-
+      editBtn.addEventListener('click', loadEditForm);
       deleteBtn.addEventListener('click', deleteBookHandler);
 
       tableRow.appendChild(titleColumn);
@@ -49,6 +44,15 @@ function attachEvents() {
 
       booksContainer.appendChild(tableRow);
     }
+  }
+
+  function loadEditForm() {
+    editBookId = this.id;
+    formHeader.textContent = 'Edit FORM';
+    submitBtn.textContent = 'Save';
+    const bookById = allBooksData[this.id];
+    titleInput.value = bookById.title;
+    authorInput.value = bookById.author;
   }
 
   async function submitFormHandler() {
