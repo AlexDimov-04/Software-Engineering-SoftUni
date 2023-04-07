@@ -1,68 +1,75 @@
 function pianist(array) {
     let pieces = Number(array.shift());
     let composers = {};
+    let commandParser = {
+        'Add': addPiece,
+        'Remove': removePiece,
+        'ChangeKey': changeKey
+    };
 
     for (let index = 1; index <= pieces; index++) {
-        let [piece, composer, key] = array.shift().split('|');
+        const [piece, composer, key] = array.shift().split('|');
         composers[piece] = { composer, key };
     }
 
     for (const line of array) {
         if (line === 'Stop') {
             break;
-        }     
-        let command = line.split('|');
-
-        if (command.includes('Add')) {
-            let [_c, piece, composer, key]  = command;
-
-            if (!composers.hasOwnProperty(piece)) {
-                composers[piece] = {composer, key};
-                console.log(`${piece} by ${composer} in ${key} added to the collection!`);
-            } else {
-                console.log(`${piece} is already in the collection!`);
-            }
         }
-        else if (command.includes('Remove')) {
-            let [_c, piece] = command;
 
-            if (composers.hasOwnProperty(piece)) {
-                delete composers[piece];
-                console.log(`Successfully removed ${piece}!`);
-            } else {
-                console.log(`Invalid operation! ${piece} does not exist in the collection.`);
-            }
-        }
-        else if (command.includes('ChangeKey')) {
-            let [_c, piece, newKey] = command;
-
-            if (composers.hasOwnProperty(piece)) {
-                composers[piece].key = newKey;
-                console.log(`Changed the key of ${piece} to ${newKey}!`);
-            } else {
-                console.log(`Invalid operation! ${piece} does not exist in the collection.`);
-            }
-        }
-        
+        let commmand = line.split('|');
+        commandParser[commmand[0]](...commmand.slice(1));
     }
 
-    for (const [key, value] of Object.entries(composers)) {
-        console.log(`${key} -> Composer: ${value.composer}, Key: ${value.key}`);
+    printResult();
+
+    function addPiece(piece, composer, key) {
+        if (composers.hasOwnProperty(piece)) {
+            console.log(`${piece} is already in the collection!`);
+        } else {
+            composers[piece] = { composer, key };
+            console.log(`${piece} by ${composer} in ${key} added to the collection!`)
+        }
+
+    }
+
+    function removePiece(piece) {
+        if (!composers.hasOwnProperty(piece)) {
+            console.log(`Invalid operation! ${piece} does not exist in the collection.`);
+        } else {
+            delete composers[piece];
+            console.log(`Successfully removed ${piece}!`);
+        }
+
+    }
+
+    function changeKey(piece, newKey) {
+        if (!composers.hasOwnProperty(piece)) {
+            console.log(`Invalid operation! ${piece} does not exist in the collection.`)
+        } else {
+            composers[piece]['key'] = newKey;
+            console.log(`Changed the key of ${piece} to ${newKey}!`)
+        }
+
+    }
+
+    function printResult() {
+        for (const [key, value] of Object.entries(composers)) {
+            console.log(`${key} -> Composer: ${value.composer}, Key: ${value.key}`)
+        }
     }
 }
 
 pianist([
-    '4',
-    'Eine kleine Nachtmusik|Mozart|G Major',
-    'La Campanella|Liszt|G# Minor',
-    'The Marriage of Figaro|Mozart|G Major',
-    'Hungarian Dance No.5|Brahms|G Minor',
-    'Add|Spring|Vivaldi|E Major',
-    'Remove|The Marriage of Figaro',
-    'Remove|Turkish March',
-    'ChangeKey|Spring|C Major',
-    'Add|Nocturne|Chopin|C# Minor',
+    '3',
+    'Fur Elise|Beethoven|A Minor',
+    'Moonlight Sonata|Beethoven|C# Minor',
+    'Clair de Lune|Debussy|C# Minor',
+    'Add|Sonata No.2|Chopin|B Minor',
+    'Add|Hungarian Rhapsody No.2|Liszt|C# Minor',
+    'Add|Fur Elise|Beethoven|C# Minor',
+    'Remove|Clair de Lune',
+    'ChangeKey|Moonlight Sonata|C# Major',
     'Stop'
-  ]
-  
+]
 )

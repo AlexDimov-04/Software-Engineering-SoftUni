@@ -1,96 +1,118 @@
 window.addEventListener("load", solve)
 
-
 function solve() {
-  const firstName = document.getElementById('first-name');
-  const lastName = document.getElementById('last-name');
-  const age = document.getElementById('age');
-  const storyTitle = document.getElementById('story-title');
-  const genre = document.getElementById('genre');
-  const previewList = document.getElementById('preview-list');
-  const textarea = document.getElementById('story');
-  const publishBtn = document.getElementById('form-btn');
-  const main = document.getElementById('main');
-  const formWrapper = document.getElementsByClassName('form-wrapper')[0];
-  const sideWrapper = document.getElementById('side-wrapper');
-  let inputData = [];
-  const li = document.createElement('li');
-  li.classList.add('story-info');
+  const inputDOMSelectors = {
+    firstName: document.getElementById('first-name'),
+    lastName: document.getElementById('last-name'),
+    age: document.getElementById('age'),
+    storyTitle: document.getElementById('story-title'),
+    genre: document.getElementById('genre'),
+    myStory: document.getElementById('story')
+  }
 
-  const article = document.createElement('article');
+  const otherDOMSelectors = {
+    publishBtn: document.getElementById('form-btn'),
+    ul: document.getElementById('preview-list'),
+    main: document.getElementById('main')
+  }
 
-  const saveBtn = document.createElement('button');
-  saveBtn.textContent = 'Save Story';
-  saveBtn.classList.add('save-btn');
+  let personalData = {};
 
-  const editBtn = document.createElement('button');
-  editBtn.textContent = 'Edit Story'
-  editBtn.classList.add('edit-btn');
+  otherDOMSelectors.publishBtn.addEventListener('click', publishInfoHandler);
 
-  const deleteBtn = document.createElement('button');
-  deleteBtn.textContent = 'Delete Story'
-  deleteBtn.classList.add('delete-btn');
+  function publishInfoHandler() {
+    let allValidFields = Object.values(inputDOMSelectors)
+      .every((input) => input.value !== '');
 
-  publishBtn.addEventListener('click', () => {
-    if (firstName.value.length > 0 && lastName.value.length > 0 && age.value.length > 0 && storyTitle.value.length > 0 && genre.value.length > 0 && textarea.value.length > 0) {
-      article.textContent = '';
-
-      article.innerHTML += `
-      <h4>Name: ${firstName.value + ' ' + lastName.value}</h4> 
-      <p>Age: ${age.value}</p>
-      <p>Title: ${storyTitle.value}</p>
-      <p>Genre: ${genre.value}</p>
-      <p>${textarea.value}</p>
-  `;
-
-
-
-      inputData = [];
-      inputData.push(firstName.value, lastName.value, age.value, storyTitle.value, genre.value, textarea.value)
-
-      previewList.appendChild(li);
-      li.appendChild(article);
-
-      li.appendChild(saveBtn);
-      li.appendChild(editBtn);
-      li.appendChild(deleteBtn);
-
-      firstName.value = '';
-      lastName.value = '';
-      age.value = '';
-      storyTitle.value = '';
-      genre.value = '';
-      textarea.value = '';
-      publishBtn.disabled = true;
+    if (!allValidFields) {
+      return;
     }
-  });
 
+    const li = createElement('li', null, otherDOMSelectors.ul, null, ['story-info']);
+    const article = createElement('article', null, li);
+    createElement('h4', `Name: ${inputDOMSelectors.firstName.value + ' ' + inputDOMSelectors.lastName.value}`, article);
+    createElement('p', `Age: ${inputDOMSelectors.age.value}`, article);
+    createElement('p', `Title: ${inputDOMSelectors.storyTitle.value}`, article);
+    createElement('p', `Genre: ${inputDOMSelectors.genre.value}`, article);
+    createElement('p', `${inputDOMSelectors.myStory.value}`, article);
+    const saveBtn = createElement('button', 'Save Story', li, null, ['save-btn']);
+    const editBtn = createElement('button', 'Edit Story', li, null, ['edit-btn']);
+    const deleteBtn = createElement('button', 'Delete Story', li, null, ['delete-btn']);
 
-  editBtn.addEventListener('click', () => {
-    let [first, last, yearsOld, storyTitleName, genreType, storyContent] = inputData;
+    personalData = {
+      firstName: inputDOMSelectors.firstName.value,
+      lastName: inputDOMSelectors.lastName.value,
+      age: inputDOMSelectors.age.value,
+      storyTitle: inputDOMSelectors.storyTitle.value,
+      genre: inputDOMSelectors.genre.value,
+      myStory: inputDOMSelectors.myStory.value
+    }
 
-    firstName.value = first;
-    lastName.value = last;
-    age.value = yearsOld;
-    storyTitle.value = storyTitleName;
-    genre.value = genreType;
-    textarea.value = storyContent;
+    saveBtn.addEventListener('click', saveInfoHandler);
+    editBtn.addEventListener('click', editInfoHandler);
+    deleteBtn.addEventListener('click', deleteInfoHandler);
 
-    previewList.removeChild(li);
-    publishBtn.disabled = false;
-  });
+    Object.values(inputDOMSelectors).forEach(input => {
+      input.value = '';
+    });
 
-  saveBtn.addEventListener('click', () => {
-    main.removeChild(formWrapper);
-    main.removeChild(sideWrapper);
+    otherDOMSelectors.publishBtn.disabled = true;
+  }
 
-    const h1 = document.createElement('h1');
-    h1.textContent = "Your scary story is saved!";
-    main.appendChild(h1);
-  });
+  function editInfoHandler() {
+    this.parentNode.remove();
 
-  deleteBtn.addEventListener('click', () => {
-    previewList.removeChild(li);
-    publishBtn.disabled = false;
-  });
+    for (const key in inputDOMSelectors) {
+      inputDOMSelectors[key].value = personalData[key];
+    }
+
+    otherDOMSelectors.publishBtn.disabled = false;
+  }
+
+  function saveInfoHandler() {
+    let mainChildren = Array.from(otherDOMSelectors.main.children);
+
+    mainChildren.forEach(child => {
+      child.remove();
+    });
+
+    createElement('h1', "Your scary story is saved!", otherDOMSelectors.main);
+  }
+
+  function deleteInfoHandler() {
+    this.parentNode.remove();
+    otherDOMSelectors.publishBtn.disabled = false;
+  }
+
+  function createElement(type, content, parentNode, id, classes, attrs) {
+    const htmlElement = document.createElement(type);
+
+    if (content && type !== 'input') {
+      htmlElement.textContent = content;
+    }
+
+    if (content && type === 'input') {
+      htmlElement.value = content;
+    }
+
+    if (id) {
+      htmlElement.id = id;
+    }
+
+    if (classes) {
+      htmlElement.classList.add(...classes);
+    }
+
+    if (parentNode) {
+      parentNode.appendChild(htmlElement);
+    }
+
+    if (attrs) {
+      for (const key in attrs) {
+        htmlElement.setAttribute(key, attrs[key]);
+      };
+    };
+
+    return htmlElement;
+  };
 }
