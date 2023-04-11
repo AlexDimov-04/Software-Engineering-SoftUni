@@ -20,9 +20,9 @@ function attachEvents() {
             tbody.textContent = '';
             for (const { product, count, price, _id } of Object.values(data)) {
                 const tr = createElement('tr', null, tbody, _id);
-                const tdProductName = createElement('td', `${product}`, tr, null, ['name']);
-                const tdCountProduct = createElement('td', `${count}`, tr, null, ['count-products']);
-                const tdProductPrice = createElement('td', `${price}`, tr, null, ['product-price']);
+                createElement('td', `${product}`, tr, null, ['name']);
+                createElement('td', `${count}`, tr, null, ['count-products']);
+                createElement('td', `${price}`, tr, null, ['product-price']);
                 const tdButtonsContainer = createElement('td', null, tr, null, ['btn']);
                 const updateBtn = createElement('button', 'Update', tdButtonsContainer, null, ['update']);
                 const deleteBtn = createElement('button', 'Delete', tdButtonsContainer, null, ['delete']);
