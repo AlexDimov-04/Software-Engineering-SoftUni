@@ -18,105 +18,44 @@ function attachEvents() {
             const res = await fetch(BASE_URL);
             const data = await res.json();
 
+            toDoUl.innerHTML = '';
+            inProgressUl.innerHTML = '';
+            codeReviewUl.innerHTML = '';
+            doneSectionUl.innerHTML = '';
+            let currentList = null;
+            let btnText = '';
+
             for (const { title, description, status, _id } of Object.values(data)) {
                 if (status === 'ToDo') {
-                    const li = createElement('li', null, toDoUl, null, ['task']);
-                    li.id = _id;
-                    createElement('h3', title, li);
-                    createElement('p', description, li);
-                    const moveBtn = createElement('button', 'Move to In Progress', li)
-
-                    moveBtn.addEventListener('click', async (e) => {
-                        Array.from(toDoUl.children).forEach(liItem => {
-                            const button = liItem.children[2].textContent = 'Move to Code Review';
-                            inProgressUl.appendChild(liItem);
-                        });
-
-                        const httpHeaders = {
-                            method: 'PATCH',
-                            body: JSON.stringify({ toDoUl })
-                        }
-
-                        const res = await fetch(BASE_URL + this.parentNode.id, httpHeaders);
-                        loadData(e);
-                    })
+                    currentList = toDoUl;
+                    btnText = 'Move to In Progress';
                 }
                 else if (status === 'In Progress') {
-                    inProgressUl.textContent = '';
-                    const li = createElement('li', null, inProgressUl, null, ['task']);
-                    li.id = _id;
-                    createElement('h3', title, li);
-                    createElement('p', description, li);
-                    const moveBtn = createElement('button', 'Move to Code Review', li)
-
-                    moveBtn.addEventListener('click', async (e) => {
-                        moveBtn.textContent = 'Move to Done';
-                        Array.from(inProgressUl.children).forEach(liItem => {
-                            const button = liItem.children[2].textContent = 'Move to Done';
-                            codeReviewUl.appendChild(liItem);
-                        });
-
-                        const httpHeaders = {
-                            method: 'PATCH',
-                            body: JSON.stringify({ inProgressUl })
-                        }
-
-                        const res = await fetch(BASE_URL + this.parentNode.id, httpHeaders);
-                        loadData(e);
-                    })
+                    currentList = inProgressUl;
+                    btnText = 'Move to Code Review';
                 }
                 else if (status === 'Code Review') {
-                    codeReviewUl.textContent = '';
-                    const li = createElement('li', null, codeReviewUl, null, ['task']);
-                    li.id = _id;
-                    createElement('h3', title, li);
-                    createElement('p', description, li);
-                    const moveBtn = createElement('button', 'Move to Done', li)
-
-                    moveBtn.addEventListener('click', async (e) => {
-                        moveBtn.textContent = 'Close'
-                        Array.from(codeReviewUl.children).forEach(liItem => {
-                            const button = liItem.children[2].textContent = 'Close';
-                            doneSectionUl.appendChild(liItem);
-                        });
-
-                        const httpHeaders = {
-                            method: 'PATCH',
-                            body: JSON.stringify({ codeReviewUl })
-                        }
-
-                        const res = await fetch(BASE_URL + this.parentNode.id, httpHeaders);
-                        loadData(e);
-                    })
+                    currentList = codeReviewUl;
+                    btnText = 'Move to Done';
                 }
                 else if (status === 'Done') {
-                    doneSectionUl.textContent = '';
-                    const li = createElement('li', null, doneSectionUl, null, ['task']);
-                    li.id = _id;
-                    createElement('h3', title, li);
-                    createElement('p', description, li);
-                    const closeBtn = createElement('button', 'Close', li);
+                    currentList = doneSectionUl;
+                    btnText = 'Close';
+                }
 
-                    const httpHeaders = {
-                        method: 'PATCH',
-                        body: JSON.stringify({ doneSectionUl })
-                    }
+                const li = createElement('li', null, currentList, null, ['task']);
+                createElement('h3', title, li);
+                createElement('p', description, li);
+                const submitBtn = createElement('button', btnText, li);
 
-                    const res = await fetch(BASE_URL + this.parentNode.id, httpHeaders);
-                    loadData(e);
+                submitBtn.status = status;
+                submitBtn.taskId = _id;
 
-                    closeBtn.addEventListener('click', async (e) => {
-                
-                            let liItemId = e.currentTarget.parentNode.id;
-                            const httpHeaders = {
-                                method: 'DELETE'
-                            }
-
-                            const res = await fetch(BASE_URL + liItemId, httpHeaders);
-                            loadData(e);
- 
-                            console.error(err);    
-                    })
+                if (status === 'Done') {
+                    submitBtn.addEventListener('click', deleteHandler);
+                }
+                else {
+                    submitBtn.addEventListener('click', moveHandler);
                 }
             }
         } catch (err) {
@@ -136,10 +75,53 @@ function attachEvents() {
                 })
             }
 
-            const res = await fetch(BASE_URL, httpHeaders);
+            await fetch(BASE_URL, httpHeaders);
             loadData(e);
             title.value = '';
             description.value = '';
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+    async function moveHandler(e) {
+        try {
+            const liStatus = this.status;
+            const taskId = this.taskId;
+            let newStatus = '';
+
+            if (liStatus === 'ToDo') {
+                newStatus = 'In Progress';
+            }
+            else if (liStatus === 'In Progress') {
+                newStatus = 'Code Review';
+            }
+            else if (liStatus === 'Code Review') {
+                newStatus = 'Done';
+            }
+
+            const httpHeaders = {
+                method: 'PATCH',
+                body: JSON.stringify({ status: newStatus })
+            }
+
+            await fetch(`${BASE_URL}${taskId}`, httpHeaders);
+            loadData(e);
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+    async function deleteHandler(e) {
+        try {
+            const taskId = this.taskId;
+            const httpHeaders = {
+                method: 'DELETE'
+            };
+
+            await fetch(`${BASE_URL}${taskId}`, httpHeaders);
+            loadData(e);
+
         } catch (err) {
             console.error(err);
         }
