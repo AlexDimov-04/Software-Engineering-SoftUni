@@ -59,10 +59,10 @@ function sprintReview(array) {
         if (!sprintBoard.hasOwnProperty(assignee)) {
             console.log(`Assignee ${assignee} does not exist on the board!`)
         }
-        else if (Number(index) >= sprintBoard[assignee].length) {
+        else if (Number(index) >= sprintBoard[assignee].length || Number(index) < 0) {
             console.log('Index is out of range!');
         } else {
-            delete sprintBoard[assignee][index];
+            sprintBoard[assignee].splice(index, 1);
         }
 
     }
