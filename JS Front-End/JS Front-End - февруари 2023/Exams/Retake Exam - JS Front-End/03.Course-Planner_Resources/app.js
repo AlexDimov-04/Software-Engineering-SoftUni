@@ -85,9 +85,9 @@ function attachEvents() {
             currentId = divContainer.id;
 
             const coursetitle = divContainer.querySelector('.container h2');
-            const coursetype = divContainer.querySelector('.container h3:nth-child(2)');
-            const descriptioncourse = divContainer.querySelector('.container h3:nth-child(3)');
-            const teachername = divContainer.querySelector('.container h4');
+            const teachername = divContainer.querySelector('.container h3:nth-child(2)');
+            const coursetype = divContainer.querySelector('.container h3:nth-child(3)');
+            const descriptioncourse = divContainer.querySelector('.container h4');
 
             courseTitle.value = coursetitle.textContent;
             courseType.value = coursetype.textContent;
