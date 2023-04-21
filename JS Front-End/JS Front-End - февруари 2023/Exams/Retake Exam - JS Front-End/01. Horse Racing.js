@@ -63,7 +63,7 @@ function horseRacing(array) {
             console.log(`${horseName} rages 2 positions ahead.`)
         }
         else if (horses.indexOf(horseName) === horses.length - 2) {
-            horses.splice(1, indexOfGivenHorse);
+            horses.splice(indexOfGivenHorse, 1);
             horses.push(horseName);
             console.log(`${horseName} rages 2 positions ahead.`)
         } else {
@@ -93,12 +93,9 @@ function horseRacing(array) {
     }
 }
 
-horseRacing(['Fancy|Lilly',
-'Retake Lilly Fancy',
-'Trouble Lilly',
-'Trouble Lilly',
-'Finish',
-'Rage Lilly'])
+horseRacing(['Onyx|Domino|Sugar|Fiona',
+'Rage Sugar',
+'Finish'])
 
 
 
