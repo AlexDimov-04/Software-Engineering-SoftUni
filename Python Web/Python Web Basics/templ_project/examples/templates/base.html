@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block page_title %}
+        My page
+        {% endblock %}
+    </title>
+
+    {% block page_styles %}
+    {% endblock %}
+</head>
+<body>
+    <nav>
+        <a href="{% url 'contact page' 'Kiril' %}">Contact page</a>
+        <a href="{% url 'index' %}">Return home</a>
+        <a href="{% url 'about page' %}">About page</a>
+    </nav>
+
+    {% block page_content %}
+    {% endblock %}
+</body>
+</html>
