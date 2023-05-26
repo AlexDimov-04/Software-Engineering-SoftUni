@@ -4,11 +4,11 @@
 
 {% block page_content %}
 
-<h2>For loop</h2>
-<ul>
+<h1>For loop</h1>
+<ul class="list-group">
     {% for student in students %}
     {% ifchanged %}
-    <li>{{student}}</li>
+    <li class="list-group-item">{{student}}</li>
     {% endifchanged %}
     {% empty %}
     <span>nothing</span>
@@ -39,6 +39,10 @@
         <li>{% show_student_info student %}</li>
         {% endfor %}
     </ul>
+</section>
+
+<section>
+    {% include 'examples/partials/another.html'%}
 </section>
 
 {% endblock %}

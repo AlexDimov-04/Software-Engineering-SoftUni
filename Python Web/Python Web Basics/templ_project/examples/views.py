@@ -32,7 +32,8 @@ def index(request):
             Student('Lili', 23),
             Student('Moni', 20),
             Student('Yavor', 30)
-        ]
+        ],
+        'logged_in': True
     }
 
     return render(request, "examples/partials/index.html", context=context)
