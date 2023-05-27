@@ -1,3 +1,4 @@
+{% load static %}
 {% extends 'base/base.html'%}
 
 {% block page_content %}
@@ -19,11 +20,11 @@
                     <p>Sasho</p>
                     <!-- Pet Edit Button -->
                     <a href="">
-                        <img class="edit-img" src="/static/images/edit-pen-icon-6.jpg" alt="edit button">
+                        <img class="edit-img" src="{% static 'images/edit-pen-icon-6.jpg' %}" alt="edit button">
                     </a>
                     <!-- Pet Delete Button -->
                     <a href="">
-                        <img class="bin-img" src="/static/images/icon-remove-22.jpg" alt="bin button">
+                        <img class="bin-img" src="{% static 'images/icon-remove-22.jpg' %}" alt="bin button">
                     </a>
                 </div>
                 <div class="data">
@@ -49,7 +50,7 @@
                         <div class="profilepic">
                             <div class="profile_img">
                                 <div class="image">
-                                    <img src="/static/images/person.png" alt="img8">
+                                    <img src="{% static 'images/person.png' %}" alt="img8">
                                 </div>
                             </div>
                         </div>
@@ -70,7 +71,7 @@
             </div>
             <!-- Post image -->
             <div class="imgBx" id="place the id of the photo here">
-                <img src="/static/images/axolotl.jpeg" alt="post" class="cover">
+                <img src="{% static 'images/axolotl.jpeg' %}" alt="post" class="cover">
             </div>
             <!-- -->
 
@@ -177,7 +178,7 @@
                         <div class="profilepic">
                             <div class="profile_img">
                                 <div class="image">
-                                    <img src="/static/images/person.png" alt="img8">
+                                    <img src="{% static 'images/person.png' %}" alt="img8">
                                 </div>
                             </div>
                         </div>
@@ -300,7 +301,7 @@
         <!-- IF Photos End Pet Photos Post Section -->
 
         <!-- IF NOT Photos Show No Post Image -->
-        <img class="no-posts" src="/static/images/no_posts.png" alt="no posts image">
+        <img class="no-posts" src="{% static 'images/no_posts.png' %}" alt="no posts image">
 
     </div>
 </div>
