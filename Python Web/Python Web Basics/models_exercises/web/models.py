@@ -65,3 +65,5 @@ class NullBlankDemo(models.Model):
     blank_null = models.IntegerField(blank=True, null=True)
 
     default = models.IntegerField(blank=False, null=False)
+
+
