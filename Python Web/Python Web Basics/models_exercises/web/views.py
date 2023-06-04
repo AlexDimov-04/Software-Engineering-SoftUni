@@ -4,7 +4,7 @@ from .models import Employee, Department
 def index(request):
     context = {
         'employees': list(Employee.objects.all()),
-        'filtered': Employee.objects.filter(age=18).order_by('years_of_experience')
+        'filtered': Employee.objects.filter(department__name='Surgeon')
     }
 
     return render(request, 'web/index.html', context=context)

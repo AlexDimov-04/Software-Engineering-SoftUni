@@ -21,6 +21,9 @@ class Department(models.Model):
 
 
 class Employee(models.Model):
+    class Meta:
+        ordering = ['-age']
+        
     LEVEL_JUNIOR = "Junior"
     LEVEL_REGULAR = "Regular"
     LEVEL_SENIOR = "Senior"
