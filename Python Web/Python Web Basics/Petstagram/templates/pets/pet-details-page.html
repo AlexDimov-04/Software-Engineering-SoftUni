@@ -1,5 +1,5 @@
-{% load static %}
 {% extends 'base/base.html'%}
+{% load static %}
 
 {% block page_content %}
 
@@ -10,7 +10,7 @@
             <div class="profile_img">
                 <div class="image">
                     <!-- Pet URL Image -->
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgoIHq82qLYnvomfz5ZkW5CLQ8VNxCyI-hUw&usqp=CAU"
+                    <img src="{{pet.personal_photo}}"
                         alt="img8">
                 </div>
             </div>
@@ -19,17 +19,17 @@
                     <!-- Pet Name -->
                     <p>Sasho</p>
                     <!-- Pet Edit Button -->
-                    <a href="">
+                    <a href="{% url 'pet edit' pet.slug %}">
                         <img class="edit-img" src="{% static 'images/edit-pen-icon-6.jpg' %}" alt="edit button">
                     </a>
                     <!-- Pet Delete Button -->
-                    <a href="">
+                    <a href="{% url 'pet delete' pet.slug %}">
                         <img class="bin-img" src="{% static 'images/icon-remove-22.jpg' %}" alt="bin button">
                     </a>
                 </div>
                 <div class="data">
                     <!-- Pet Total Photos -->
-                    <span>4</span>
+                    <span>{{all_photos.count}}</span>
                     <p>photos</p>
                 </div>
             </div>
