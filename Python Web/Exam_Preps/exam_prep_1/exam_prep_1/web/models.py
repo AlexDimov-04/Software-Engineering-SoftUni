@@ -4,7 +4,7 @@ from django.core.exceptions import ValidationError
 
 def validate_only_alphanumeric(value):
     for ch in value:
-        if not ch.isalnum() or ch != '_':
+        if not ch.isalnum() and ch != '_':
             raise ValidationError("Ensure this value contains only letters, numbers, and underscore.")
 
 class Profile(models.Model):

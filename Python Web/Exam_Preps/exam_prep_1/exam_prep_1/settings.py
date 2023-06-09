@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'exam_prep_1.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "mydatabase",
+        "NAME": "my_music_db",
         "USER": "postgres-user",
         "PASSWORD": "Hipers2013",
         "HOST": "127.0.0.1",
