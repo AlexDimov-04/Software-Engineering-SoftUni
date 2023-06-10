@@ -79,7 +79,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "my_music_db",
         "USER": "postgres-user",
-        "PASSWORD": "Hipers2013",
+        "PASSWORD": "aloalo123",
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }

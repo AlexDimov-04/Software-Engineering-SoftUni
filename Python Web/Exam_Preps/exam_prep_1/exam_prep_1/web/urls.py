@@ -10,7 +10,6 @@ urlpatterns = [
        path('delete/<int:pk>/', delete_album, name='delete album')
     ])),
    path('profile/', include([
-       path('add/', add_profile, name='add profile'),
        path('details/', details_profile, name='details profile'),
        path('delete/', delete_profile, name='delete profile')
    ])),
