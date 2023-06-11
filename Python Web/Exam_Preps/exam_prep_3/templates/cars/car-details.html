@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <title>CarCollection</title>
+</head>
+
+<body>
+<div id="box">
+    <header>
+        <!-- Navigation Bar -->
+        <h1><a class="index-navigation" href="{% url 'index' %}"><span>C</span>ARS <span>C</span>OLLECTION</a></h1>
+        <nav>
+                <!-- if the user has created a profile -->
+                <a href="{% url 'catalogue' %}">Catalogue</a>
+                <a href="{% url 'create car' %}">Create Car</a>
+                <a href="{% url 'details profile' %}">Profile</a>
+        </nav>
+    </header>
+
+    <!-- details section -->
+    <section id="car-details">
+        <h1>Car Details</h1>
+        <div class="info-section">
+            <div class="car-header">
+                <!-- car image -->
+                <img class="car-img"
+                     src="{{car.image_url}}"
+                     alt='car image'/>
+                <!-- type and model -->
+                <h1>{{car.type}}</h1>
+                <!-- car model -->
+                <p><span class="description">Model: {{car.model}}</span></p>
+                <!-- car year -->
+                <p><span class="description">Year: {{car.year}}</span></p>
+                <!-- car price -->
+                <p><span class="description">Price: {{car.price|floatformat:3}}</span></p>
+            </div>
+
+
+            <!-- Edit/Delete buttons -->
+            <div class="buttons">
+                <a href="{% url 'edit car' pk=car.pk %}" class="edit-button">Edit</a>
+                <a href="{% url 'delete car' pk=car.pk %}" class="delete-button">Delete</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        &copy;SoftUni Team 2022. All rights reserved.
+    </footer>
+</div>
+</body>
+</html>
