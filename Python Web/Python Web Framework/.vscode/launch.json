@@ -1,0 +1,32 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "cwd": "${fileDirname}",
+            "env": {"PYTHONPATH": "${workspaceFolder}/djangoenvironment${pathSeparator}${env:PYTHONPATH}"}
+        },
+
+        {
+            "name": "BlogTheData",
+            "python": "Users/User/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Python 3.7",
+            "type": "python",
+            "request": "launch",    
+            "program": "Users/User/Documents/GitHub/Software-Engineering-SoftUni/Python Web/Python Web Framework/Exercises/cbv_demo/manage.py",
+            "console": "internalConsole",
+            "args": ["runserver"],
+           "django": true,
+           "justMyCode": true,
+        }
+
+    ]
+}
