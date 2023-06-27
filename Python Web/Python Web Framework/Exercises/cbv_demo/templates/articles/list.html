@@ -17,12 +17,17 @@
 </head>
 
 <body>
+    <form action="{% url 'list_articles_cbv' %}?page={{page_obj.number}}">
+        <input name="search" value="{{search}}">
+        <button>Search by title</button>
+    </form>
+
     <div>
         <ul>
             <h2>object_list</h2>
             {% for article in object_list %}
             <li>
-                {{article.id}} {{ article.title }}
+                <a href="{% url 'details_article' article.pk %}">{{article.id}} - {{ article.title }}</a>
             </li>
             {% endfor %}
     
@@ -32,7 +37,7 @@
             <h2>article_list</h2>
             {% for article in article_list %}
             <li>
-                {{article.id}} {{ article.title }}
+                <a href="{% url 'details_article' article.pk %}">{{article.id}} - {{ article.title }}</a>
             </li>
             {% endfor %}
     
@@ -40,7 +45,7 @@
     </div>
 
     {% if page_obj.has_previous %}
-        <a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+        <a href="?page={{ page_obj.previous_page_number }}&search={{search}}">&lt;</a>
     {% else %}
         <a>&lt;</a>
     {% endif %}
@@ -48,7 +53,7 @@
     {{page_obj.number}} / {{ paginator.num_pages }}
 
     {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">&gt;</a>
+        <a href="?page={{ page_obj.next_page_number }}&search={{search}}">&gt;</a>
     {% else %}
         <a>&gt;</a>
     {% endif %}
