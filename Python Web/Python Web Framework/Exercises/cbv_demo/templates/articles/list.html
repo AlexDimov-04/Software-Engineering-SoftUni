@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    <a href="{% url 'create_article' %}">Create</a>
     <form action="{% url 'list_articles_cbv' %}?page={{page_obj.number}}">
         <input name="search" value="{{search}}">
         <button>Search by title</button>
@@ -28,6 +29,7 @@
             {% for article in object_list %}
             <li>
                 <a href="{% url 'details_article' article.pk %}">{{article.id}} - {{ article.title }}</a>
+                <a href="{% url 'delete_article' article.pk %}">Delete</a>
             </li>
             {% endfor %}
     
@@ -38,6 +40,7 @@
             {% for article in article_list %}
             <li>
                 <a href="{% url 'details_article' article.pk %}">{{article.id}} - {{ article.title }}</a>
+                <a href="{% url 'delete_article' article.pk %}">Delete</a>
             </li>
             {% endfor %}
     

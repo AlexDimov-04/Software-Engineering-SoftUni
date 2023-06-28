@@ -1,3 +1,4 @@
+from django import forms
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic as views
@@ -56,3 +57,37 @@ class ArticlesListView(views.ListView):
 class ArticleDetailView(views.DetailView):
     model = Article
     template_name = 'articles/detail.html'
+
+class ArticleForm(forms.ModelForm):
+    pass
+
+class ArticleCreateView(views.CreateView):
+    model = Article
+    template_name = 'articles/create.html'
+    # fields = "__all__"
+    success_url = reverse_lazy('list_articles_cbv')
+    disabled_fields = ('title', 'content')
+
+    def get_form(self, *args, **kwargs):
+        form = super().get_form(*args, **kwargs)
+
+        for field in self.disabled_fields:
+            form.fields[field].widget.attrs['disabled'] = 'disabled'
+
+        return form
+
+    form_class = forms.modelform_factory(Article, fields=('title', 'content'), widgets={
+        'title': forms.TextInput(
+            attrs={
+                'class': 'abc',
+            }
+        )
+    })
+
+class ArticleUpdateView(views.UpdateView):
+    pass
+
+class ArticleDeleteView(views.DeleteView):
+    model = Article
+    template_name = 'articles/delete.html'
+    form_class = forms.modelform_factory(Article, fields=('title', 'content'),)
