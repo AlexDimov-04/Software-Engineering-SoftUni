@@ -1,2 +1,0 @@
-# The project has been made on vs code IDE
-# It excludes the django environment configuration folder, which PyCharm run automatically
