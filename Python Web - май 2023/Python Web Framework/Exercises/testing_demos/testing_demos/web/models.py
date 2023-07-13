@@ -13,7 +13,7 @@ class Post(models.Model):
     )
     author_phone = models.CharField(
         max_length=10,
-        validators=validate_phone
+        validators=[validate_phone]
     )
     found = models.BooleanField(
         default=False
